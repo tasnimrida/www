@@ -1,0 +1,24 @@
+---
+title: "EDA project"
+description: "Eda project" 
+date: July 2024
+about:
+  template: solana
+  image: cover.jpg
+  links:
+    - icon: github
+      text: "GitHub"
+      href: https://github.com/tasnimrida
+    - icon: laptop
+      text: Slides
+      href: bit.ly/mnbvpoiu
+    - icon: file
+      text: Poster
+      href: bit.ly/mnbvpoiu
+    - icon: pencil 
+      text: Report
+      href: bit.ly/mnbvpoiu
+---
+
+some text
+

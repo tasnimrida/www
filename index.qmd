@@ -1,0 +1,19 @@
+---
+title: "Tasnim Rida"
+about: 
+  template: jolla
+  image: assets/headshot.jpg
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:ridatasnim@gmail.com
+    - icon: github
+      text: GitHub
+      href: https://github.com/tasnimrida
+      target: _blank
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/tasnim-rida/
+---
+
+Welcome to my website! I am a currently a rising senior studying Statistics at Carnegie Mellon University. I am also pursuing an additional major in Health Humanities and a minor in Media Design. I am interested in data analytics and visualizations in health sciences, specifically applications in epidemiology.

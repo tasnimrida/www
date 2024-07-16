@@ -1,0 +1,23 @@
+---
+title: "Capstone"
+description: "Capstone project on modeling the relationship between socioeconomic factors and premature deaths at a county level in the United States for SURE 2024 at CMU" 
+date: July 2024
+about:
+  template: solana
+  image: cover.jpeg
+  links:
+    - icon: github
+      text: "GitHub"
+      href: https://github.com/tasnimrida
+    - icon: laptop
+      text: Slides
+      href: bit.ly/mnbvpoiu
+    - icon: file
+      text: Poster
+      href: bit.ly/mnbvpoiu
+    - icon: pencil 
+      text: Report
+      href: bit.ly/mnbvpoiu
+---
+
+some text

@@ -1,0 +1,31 @@
+project:
+  type: website
+  resources: assets
+  output-dir: docs
+
+website:
+  title: "Tasnim Rida"
+  navbar:
+    background: "#C41230"
+    left:
+      - href: index.qmd
+        text: Home
+      - projects.qmd
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/tasnim-rida/
+      - icon: github
+        href: https://github.com/tasnimrida
+      - icon: file-richtext-fill
+        href: assets/resume.pdf
+
+format:
+  html:
+    theme:
+        light: flatly
+        dark: darkly
+    css: styles.css
+    toc: true
+
+
+
