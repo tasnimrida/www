@@ -6,9 +6,6 @@ about:
   template: solana
   image: cover.jpeg
   links:
-    - icon: github
-      text: "GitHub"
-      href: https://github.com/tasnimrida
     - icon: laptop
       text: Slides
       href: bit.ly/mnbvpoiu
@@ -20,4 +17,4 @@ about:
       href: bit.ly/mnbvpoiu
 ---
 
-some text
+some wonderful changes
