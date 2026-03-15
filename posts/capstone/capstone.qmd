@@ -18,4 +18,4 @@ about:
       href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/report.html
 ---
 
-some wonderful amazing changes
+some wonderful amazing changes!
