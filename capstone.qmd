@@ -6,15 +6,12 @@ about:
   template: solana
   image: cover.jpeg
   links:
-    - icon: github
-      text: "GitHub"
-      href: https://github.com/tasnimrida
     - icon: laptop
       text: Slides
       href: bit.ly/mnbvpoiu
     - icon: file
       text: Poster
-      href: bit.ly/mnbvpoiu
+      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/poster.pdf 
     - icon: pencil 
       text: Report
       href: bit.ly/mnbvpoiu
