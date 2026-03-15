@@ -14,7 +14,6 @@ about:
       href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/poster.pdf 
     - icon: pencil 
       text: Report
-      href: bit.ly/mnbvpoiu
 ---
 
-some text
+im testing changes to my wwebsite. 
