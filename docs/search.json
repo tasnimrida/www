@@ -32,6 +32,6 @@
     "href": "posts/capstone/capstone.html",
     "title": "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups",
     "section": "",
-    "text": "This project examines how socioeconomic factors influence premature death rates across U.S. counties and racial groups.\nUsing county-level data from the County Health Rankings dataset, I analyzed relationships between premature mortality and indicators such as income inequality, unemployment, and high school completion. I built predictive models in R, comparing multiple linear regression with a gradient boosted tree.\nResults show that greater income inequality and unemployment are associated with higher premature mortality, while higher education levels correspond with lower rates. The gradient boosted model achieved the strongest predictive performance and identified high school completion as the most important predictor."
+    "text": "hello world"
   }
 ]
