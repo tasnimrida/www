@@ -1,20 +1,14 @@
 ---
-title: "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups"
-description: "Used statistical modeling in R to analyze county-level socioeconomic predictors of premature mortality and health disparities. Completed during the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program with UnitedHealth Group." 
+title: "Capstone"
+description: "Capstone project on modeling the relationship between socioeconomic factors and premature deaths at a county level in the United States for SURE 2024 at CMU" 
 date: July 2024
 about:
   template: solana
-  image: cover.jpeg
   links:
-    - icon: laptop
-      text: Slides
-      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/slides.pdf
-    - icon: file
-      text: Poster
-      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/poster.pdf
-    - icon: pencil
-      text: Report
-      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/report.html
+    - icon: github
+      text: "GitHub"
+      href: https://github.com/tasnimrida
+    - text: Slides
+    - text: Poster
+    - text: Report
 ---
-
-hello world
