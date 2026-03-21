@@ -2,8 +2,8 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/posts/eda/eda.html",
-      "/posts/capstone/capstone.html"
+      "/posts/capstone/capstone.html",
+      "/posts/eda/eda.html"
     ]
   }
 ]
