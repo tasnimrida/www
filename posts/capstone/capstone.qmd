@@ -1,15 +1,87 @@
 ---
-title: "Capstone"
-description: "Capstone project on modeling the relationship between socioeconomic factors and premature deaths at a county level in the United States for SURE 2024 at CMU" 
+title: "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups"
+description: "A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health." 
+image: plot1.png 
 date: July 2024
 about:
   template: solana
   links:
-    - icon: github
-      text: "GitHub"
-      href: https://github.com/tasnimrida
-    - text: Slides
-    - text: Poster
-    - text: Report
+    - icon: laptop
+      text: Slides
+      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/slides.pdf
+    - icon: pip
+      text: Poster
+      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/poster.pdf
+    - icon: pencil
+      text: Report
+      href: https://www.stat.cmu.edu/cmsac/sure/2024/showcase/premature_deaths/report.html
 ---
-some text blah blah
+
+```{=html}
+<style>
+  /* Hide sidebar image */
+  .about-entity img {
+    display: none;
+  }
+
+  /* Create space on the sides for arrows */
+  #capstoneCarousel {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* Style the images with a border */
+  .carousel-item img {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+  }
+
+  /* Move arrows outside and make them dark */
+  .carousel-control-prev, .carousel-control-next {
+    width: 50px;
+    filter: invert(1); /* Makes white arrows black */
+  }
+
+  .carousel-control-prev { left: 0; }
+  .carousel-control-next { right: 0; }
+</style>
+
+<div id="capstoneCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 950px; margin: 20px auto 40px auto;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="plot1.png" class="d-block w-100" alt="Geospatial Analysis">
+    </div>
+    <div class="carousel-item">
+      <img src="plot2.png" class="d-block w-100" alt="Model Findings">
+    </div>
+    <div class="carousel-item">
+      <img src="plot3.png" class="d-block w-100" alt="Predictive Analysis">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#capstoneCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#capstoneCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+```
+
+# Research Overview
+This project examines how socioeconomic factors influence premature death rates across U.S. counties and racial groups. Leveraging data from the County Health Rankings data set, the research quantifies the influence of systemic factors on premature mortality rates at the county level.
+
+# Methodology
+The analytical framework employed statistical modeling in R to evaluate relationships between mortality and various Social Determinants of Health (SDOH). Based on exploratory data analysis, 
+two distinct modeling approaches were compared:
+
+* Multiple Linear Regression: Utilized to establish baseline correlations and effect sizes.
+
+* Gradient Boosted Trees (XGBoost): Leveraged to capture non-linear relationships and high-dimensional interactions between variables.
+
+# Key Findings
+* Socioeconomic Impact: The analysis confirmed that increases in income inequality and unemployment are associated with increases in years of premature death. Conversely, as high school completion percentages increase, premature deaths decrease.
+* Variable Importance & Model Divergence: Findings revealed a contrast between the two approaches. The multiple linear regression identified AIAN population percentage as the most important variable, likely due to the model's sensitivity to the small population percentages of this group across the U.S. In contrast, the gradient boosted tree—which proved more reliable with a lower RMSE—identified high school completion as the most significant predictor.
+
+***
+*This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.*

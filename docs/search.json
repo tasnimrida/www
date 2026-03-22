@@ -11,7 +11,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Below, you can find my projects.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCapstone\n\n\n\n\n\nCapstone project on modeling the relationship between socioeconomic factors and premature deaths at a county level in the United States for SURE 2024 at CMU\n\n\n\n\n\nJul 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEDA project\n\n\n\n\n\nEda project\n\n\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Below, you can find my projects.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEDA project\n\n\n\n\n\nEda project\n\n\n\n\n\nJul 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nExamining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups\n\n\n\n\n\nA statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health.\n\n\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/eda/eda.html",
@@ -30,8 +30,8 @@
   {
     "objectID": "posts/capstone/capstone.html",
     "href": "posts/capstone/capstone.html",
-    "title": "Capstone",
+    "title": "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups",
     "section": "",
-    "text": "some text blah blah"
+    "text": "Research Overview\nThis project examines how socioeconomic factors influence premature death rates across U.S. counties and racial groups. Leveraging data from the County Health Rankings data set, the research quantifies the influence of systemic factors on premature mortality rates at the county level.\n\n\nMethodology\nThe analytical framework employed statistical modeling in R to evaluate relationships between mortality and various Social Determinants of Health (SDOH). Based on exploratory data analysis, two distinct modeling approaches were compared:\n\nMultiple Linear Regression: Utilized to establish baseline correlations and effect sizes.\nGradient Boosted Trees (XGBoost): Leveraged to capture non-linear relationships and high-dimensional interactions between variables.\n\n\n\nKey Findings\n\nSocioeconomic Impact: The analysis confirmed that increases in income inequality and unemployment are associated with increases in years of premature death. Conversely, as high school completion percentages increase, premature deaths decrease.\nVariable Importance & Model Divergence: Findings revealed a contrast between the two approaches. The multiple linear regression identified AIAN population percentage as the most important variable, likely due to the model’s sensitivity to the small population percentages of this group across the U.S. In contrast, the gradient boosted tree—which proved more reliable with a lower RMSE—identified high school completion as the most significant predictor.\n\n\nThis research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group."
   }
 ]
