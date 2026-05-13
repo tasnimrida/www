@@ -1,1 +1,81 @@
-/* css styles */
+.navbar,
+#quarto-header {
+  display: none !important;
+}
+
+.site-header {
+  width: 100%;
+  padding: 1.5rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: white;
+  z-index: 10;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.site-brand:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.flower-logo {
+  width: 105px;
+  height: 105px;
+  flex-shrink: 0;
+}
+
+.site-name {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: black;
+  text-decoration: none;
+  border: 1.5px solid black;
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.site-nav a:hover {
+  background: #e065df;
+  color: white;
+  border-color: #e065df;
+}
+
+@media (max-width: 750px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .flower-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+  }
+}/* css styles */
