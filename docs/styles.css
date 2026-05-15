@@ -1,81 +1,257 @@
-.navbar,
-#quarto-header {
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+  background: #f4f4f4;
+  color: #111;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: transparent !important;
+  padding: 1.5rem 2rem 1rem 2rem !important;
+}
+
+.navbar > .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.4rem !important;
+}
+
+.navbar-brand {
+  font-family: "Fraunces", serif !important;
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.05em !important;
+  color: #111 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  white-space: nowrap !important;
+
+  margin-right: 1.5rem !important;
+}
+
+.navbar-brand img,
+.navbar-logo,
+img.navbar-logo {
+  height: 120px !important;
+  max-height: 120px !important;
+  width: auto !important;
+}
+
+.navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+.navbar-nav.me-auto {
+  margin-right: auto !important;
+}
+
+.navbar-nav.ms-auto {
+  margin-left: auto !important;
+}
+
+.nav-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.nav-link {
+  font-family: "Inter", sans-serif !important;
+  font-size: 1rem !important;
+  color: #111 !important;
+
+  border: 2px solid #111 !important;
+  border-radius: 999px !important;
+  padding: 0.7rem 1.45rem !important;
+
+  min-width: 105px !important;
+  text-align: center !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  line-height: 1 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-link:hover {
+  background: #111 !important;
+  color: white !important;
+}
+
+.navbar-nav.ms-auto .nav-link {
+  min-width: 78px !important;
+}
+
+#quarto-search,
+.aa-DetachedSearchButton {
   display: none !important;
 }
 
-.site-header {
-  width: 100%;
-  padding: 1.5rem 4vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  background: white;
-  z-index: 10;
+/* PAGE */
+
+#quarto-content,
+#quarto-document-content,
+.content,
+main.content {
+  max-width: 1500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.site-brand {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  color: black;
-  text-decoration: none;
+h1, h2, h3, h4 {
+  font-family: "Fraunces", serif !important;
+  color: #111;
+  letter-spacing: -0.03em;
 }
 
-.site-brand:hover {
-  color: black;
-  text-decoration: none;
+p, li {
+  font-family: "Inter", sans-serif;
 }
 
-.flower-logo {
-  width: 105px;
-  height: 105px;
-  flex-shrink: 0;
+/* HIDE DEFAULT QUARTO PAGE TITLES */
+
+header#title-block-header,
+#title-block-header,
+.quarto-title-block,
+.quarto-title,
+.quarto-title-meta,
+main.content > header,
+main.content > h1:first-child,
+main.content h1.title,
+h1.title {
+  display: none !important;
 }
 
-.site-name {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 1;
+/* PROJECTS INTRO */
+
+.projects-intro {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+/* PROJECT GRID */
+
+.quarto-listing-container-grid {
+  max-width: 1400px !important;
+  width: 90vw !important;
+  margin: 0 auto !important;
 }
 
-.site-nav a {
-  color: black;
-  text-decoration: none;
-  border: 1.5px solid black;
-  border-radius: 999px;
-  padding: 0.45rem 0.95rem;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+/* PROJECT CARDS */
+
+.quarto-grid-item {
+  border-radius: 34px !important;
+  overflow: hidden !important;
+
+  border: 2px solid #111 !important;
+  background: white !important;
+
+  box-shadow: 14px 14px 0 #d85cdb !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+
+  min-height: 520px !important;
 }
 
-.site-nav a:hover {
-  background: #e065df;
-  color: white;
-  border-color: #e065df;
+.quarto-grid-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 14px 14px 0 #b7ff91 !important;
 }
 
-@media (max-width: 750px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.2rem 1.4rem;
+.quarto-grid-item img {
+  height: 330px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  border-bottom: 2px solid #111 !important;
+}
+
+.listing-title {
+  font-family: "Fraunces", serif !important;
+  font-size: 1.6rem !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.listing-description {
+  font-family: "Inter", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.button,
+.btn,
+.quarto-listing-category {
+  font-family: "Inter", sans-serif !important;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #d85cdb;
+}
+
+/* MOBILE */
+
+@media (max-width: 1100px) {
+  .navbar-brand {
+    font-size: 3.2rem !important;
+    margin-right: 1rem !important;
   }
 
-  .flower-logo {
-    width: 75px;
-    height: 75px;
+  .navbar-brand img,
+  .navbar-logo,
+  img.navbar-logo {
+    height: 95px !important;
+    max-height: 95px !important;
   }
 
-  .site-nav {
-    flex-wrap: wrap;
+  .nav-link {
+    min-width: auto !important;
+    padding: 0.6rem 1rem !important;
   }
-}/* css styles */
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    padding: 1.2rem 1rem !important;
+  }
+
+  .navbar-brand {
+    font-size: 2.5rem !important;
+  }
+
+  .navbar-brand img,
+  .navbar-logo,
+  img.navbar-logo {
+    height: 75px !important;
+    max-height: 75px !important;
+  }
+
+  .projects-intro {
+    font-size: 1.25rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .quarto-grid-item {
+    min-height: auto !important;
+  }
+
+  .quarto-grid-item img {
+    height: 260px !important;
+  }
+}

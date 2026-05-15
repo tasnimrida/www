@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tasnim Rida - Projects</title>
+<title>Tasnim Rida -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -41,11 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -77,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -130,140 +131,126 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Tasnim Rida</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./assets/resume.pdf"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./YOUR_LINKEDIN_URL_HERE"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:YOUR_EMAIL_HERE"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<header class="site-header">
 
-  <a class="site-brand" href="index.html">
-    <svg class="flower-logo" viewbox="0 0 200 200" aria-label="flower logo">
-      <circle cx="100" cy="40" r="36" fill="#e065df"></circle>
-      <circle cx="150" cy="80" r="36" fill="#e065df"></circle>
-      <circle cx="130" cy="145" r="36" fill="#e065df"></circle>
-      <circle cx="70" cy="145" r="36" fill="#e065df"></circle>
-      <circle cx="50" cy="80" r="36" fill="#e065df"></circle>
-      <circle cx="100" cy="100" r="20" fill="#ffffff"></circle>
-    </svg>
 
-    <span class="site-name">Tasnim Rida</span>
-  </a>
 
-  <nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="https://www.linkedin.com/in/tasnim-rida/">LinkedIn</a>
-    <a href="mailto:ridatasnim@gmail.com">Email</a>
-  </nav>
 
-</header>
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Projects</h1>
+<div class="projects-intro">
+<p>Check out my projects :)</p>
 </div>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1722484800000" data-listing-file-modified-sort="1778666112155" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1554">
+<a href="./posts/capstone/capstone.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/capstone/plot1.png" class="thumbnail-image card-img" style="height: 330px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups
+</h5>
+<div class="card-text listing-description">
+A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
-
-</header>
-
-
-<p>Below, you can find my projects.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1719806400000" data-listing-file-modified-sort="1778647647456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="451">
-<div class="thumbnail">
-<p><a href="./posts/401/401.html" class="no-external"></a></p><a href="./posts/401/401.html" class="no-external">
-<p><img src="./posts/401/plot1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/401/401.html" class="no-external"></a></p>
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/401/401.html" class="no-external">Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/401/401.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/401/401.html" class="no-external">A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/401/401.html" class="no-external">
-<div class="listing-date">
-Jul 1, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1722484800000" data-listing-file-modified-sort="1778660835212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1554">
-<div class="thumbnail">
-<p><a href="./posts/capstone/capstone.html" class="no-external"></a></p><a href="./posts/capstone/capstone.html" class="no-external">
-<p><img src="./posts/capstone/plot1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/capstone/capstone.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/capstone/capstone.html" class="no-external">Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/capstone/capstone.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/capstone/capstone.html" class="no-external">A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/capstone/capstone.html" class="no-external">
 <div class="listing-date">
 Aug 1, 2024
 </div>
+</div>
+</div>
+</div>
 </a>
 </div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1709269200000" data-listing-file-modified-sort="1778539937480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="543">
+<a href="./posts/d3lab/d3lab.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/d3lab/pic2.jpg" class="thumbnail-image card-img" style="height: 330px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Social Rejection and Risk-Taking in Ingroup and Outgroup Situations
+</h5>
+<div class="card-text listing-description">
+Behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity.
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1709269200000" data-listing-file-modified-sort="1778539937480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="543">
-<div class="thumbnail">
-<p><a href="./posts/d3lab/d3lab.html" class="no-external"></a></p><a href="./posts/d3lab/d3lab.html" class="no-external">
-<p><img src="./posts/d3lab/pic2.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/d3lab/d3lab.html" class="no-external"></a></p>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/d3lab/d3lab.html" class="no-external">Social Rejection and Risk-Taking in Ingroup and Outgroup Situations</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/d3lab/d3lab.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/d3lab/d3lab.html" class="no-external">Behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/d3lab/d3lab.html" class="no-external">
 <div class="listing-date">
 Mar 1, 2024
 </div>
-</a>
 </div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
@@ -351,7 +338,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tasnimrida\.github\.io\/www\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
