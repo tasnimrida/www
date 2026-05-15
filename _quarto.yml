@@ -23,4 +23,3 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    include-before-body: _includes/header.html

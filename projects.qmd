@@ -1,8 +1,14 @@
 ---
-title: "Projects"
+title: ""
+
 listing:
   contents: posts
-  type: default
+  type: grid
+  image-height: 330px
+  categories: false
+  sort: "date desc"
 ---
 
-Below, you can find my projects.
+<div class="projects-intro">
+  Check out my projects :)
+</div>
