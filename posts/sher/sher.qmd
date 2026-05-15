@@ -1,6 +1,6 @@
 ---
 title: "Social Rejection and Risk-Taking in Ingroup and Outgroup Situations"
-description: "Behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity." 
+description: "A behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity." 
 image: pic2.jpg
 date: March 2024
 about:

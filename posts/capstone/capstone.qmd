@@ -1,6 +1,6 @@
 ---
 title: "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups"
-description: "A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health."
+description: "A statistical investigation of county-level predictors of health disparities, utilizing Gradient Boosted Trees and regression to identify key social determinants of health."
 image: plot1.png
 date: August 2024
 page-layout: full

@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
+:root {
+  --bg: #f4f4f4;
+  --black: #111;
+  --white: #ffffff;
+  --purple: #d85cdb;
+  --green: #b7ff91;
+}
+
 body {
-  background: #f4f4f4;
-  color: #111;
+  background: var(--bg);
+  color: var(--black);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
@@ -25,7 +33,7 @@ body {
   font-size: 4rem !important;
   font-weight: 400 !important;
   letter-spacing: -0.05em !important;
-  color: #111 !important;
+  color: var(--black) !important;
 
   display: flex !important;
   align-items: center !important;
@@ -41,6 +49,7 @@ img.navbar-logo {
   height: 120px !important;
   max-height: 120px !important;
   width: auto !important;
+  object-fit: contain !important;
 }
 
 .navbar-nav {
@@ -65,9 +74,9 @@ img.navbar-logo {
 .nav-link {
   font-family: "Inter", sans-serif !important;
   font-size: 1rem !important;
-  color: #111 !important;
+  color: var(--black) !important;
 
-  border: 2px solid #111 !important;
+  border: 2px solid var(--black) !important;
   border-radius: 999px !important;
   padding: 0.7rem 1.45rem !important;
 
@@ -84,7 +93,7 @@ img.navbar-logo {
 }
 
 .nav-link:hover {
-  background: #111 !important;
+  background: var(--black) !important;
   color: white !important;
 }
 
@@ -108,13 +117,41 @@ main.content {
   margin-right: auto !important;
 }
 
-h1, h2, h3, h4 {
+main.content {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* FORCE QUARTO PAGE TO CENTER NORMALLY */
+
+.page-columns,
+.page-layout-full,
+.quarto-layout-panel,
+#quarto-content.page-columns,
+#quarto-document-content.page-columns {
+  display: block !important;
+  grid-template-columns: none !important;
+  column-gap: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+main.content,
+#quarto-document-content {
+  grid-column: auto !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-family: "Fraunces", serif !important;
-  color: #111;
+  color: var(--black);
   letter-spacing: -0.03em;
 }
 
-p, li {
+p,
+li {
   font-family: "Inter", sans-serif;
 }
 
@@ -132,62 +169,195 @@ h1.title {
   display: none !important;
 }
 
-/* PROJECTS INTRO */
+/* PROJECTS INTRO PILL */
+
+.projects-intro-wrap {
+  width: 100%;
+  max-width: 1180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2.25rem auto 4.25rem auto;
+  padding: 0;
+}
 
 .projects-intro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
   font-family: "Inter", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
   text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  color: var(--black);
+
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  box-shadow: 10px 10px 0 var(--green);
+
+  padding: 0.85rem 2rem;
+  margin: 0 auto;
 }
 
 /* PROJECT GRID */
 
 .quarto-listing-container-grid {
-  max-width: 1400px !important;
-  width: 90vw !important;
-  margin: 0 auto !important;
+  max-width: 1180px !important;
+  width: 86vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.quarto-listing-container-grid .quarto-grid {
+  gap: 2.5rem !important;
+  align-items: start !important;
+  justify-content: center !important;
 }
 
 /* PROJECT CARDS */
 
 .quarto-grid-item {
-  border-radius: 34px !important;
+  border-radius: 30px !important;
   overflow: hidden !important;
 
-  border: 2px solid #111 !important;
-  background: white !important;
+  border: 2px solid var(--black) !important;
+  background: var(--white) !important;
 
-  box-shadow: 14px 14px 0 #d85cdb !important;
+  box-shadow: 10px 10px 0 var(--purple) !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 
-  min-height: 520px !important;
+  min-height: 430px !important;
+  max-width: 520px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  position: relative !important;
+  text-align: center !important;
+}
+
+/* REMOVE WEIRD QUARTO/CARD DIVIDER LINES */
+
+.quarto-grid-item::before,
+.quarto-grid-item::after,
+.quarto-grid-item .card::before,
+.quarto-grid-item .card::after,
+.quarto-grid-item .thumbnail::before,
+.quarto-grid-item .thumbnail::after,
+.quarto-grid-item .listing-image::before,
+.quarto-grid-item .listing-image::after {
+  display: none !important;
+  content: none !important;
 }
 
 .quarto-grid-item:hover {
   transform: translateY(-4px) !important;
-  box-shadow: 14px 14px 0 #b7ff91 !important;
+  box-shadow: 10px 10px 0 var(--green) !important;
 }
 
-.quarto-grid-item img {
-  height: 330px !important;
+/* PROJECT CARD IMAGES */
+
+.quarto-grid-item img,
+.quarto-grid-item .thumbnail-image,
+.quarto-grid-item .card-img-top,
+.quarto-grid-item .listing-image img,
+.quarto-grid-item .thumbnail img {
+  height: 240px !important;
   width: 100% !important;
-  object-fit: cover !important;
-  border-bottom: 2px solid #111 !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background: var(--white) !important;
+  padding: 1rem !important;
+
+  border: none !important;
+  border-bottom: 2px solid var(--black) !important;
+}
+
+/* CLEAN IMAGE AREA */
+
+.quarto-grid-item .thumbnail,
+.quarto-grid-item .listing-image,
+.quarto-grid-item .card-img,
+.quarto-grid-item .card-img-top {
+  border: none !important;
+  background: var(--white) !important;
+  margin: 0 !important;
+}
+
+/* PROJECT CARD TEXT */
+
+.quarto-grid-item .card-body,
+.quarto-grid-item .body {
+  padding: 1.05rem 1.2rem 1.25rem 1.2rem !important;
+  border: none !important;
+  text-align: center !important;
 }
 
 .listing-title {
   font-family: "Fraunces", serif !important;
-  font-size: 1.6rem !important;
+  font-size: 1.28rem !important;
   line-height: 1.12 !important;
   letter-spacing: -0.03em !important;
+  font-weight: 500 !important;
+
+  margin: 0 auto 1.2rem auto !important;
+  padding: 0 !important;
+
+  border: none !important;
+
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.listing-title a {
+  color: var(--black) !important;
+  text-decoration: none !important;
+  border: none !important;
+
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.listing-title a:hover {
+  color: var(--purple) !important;
+  text-decoration: none !important;
 }
 
 .listing-description {
   font-family: "Inter", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: var(--black) !important;
+
+  border: none !important;
+
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  max-width: 90% !important;
+}
+
+.listing-date,
+.card-attribution {
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.78rem !important;
+  color: var(--black) !important;
+  opacity: 0.7;
+  border: none !important;
+
+  text-align: right !important;
 }
 
 .button,
@@ -201,7 +371,7 @@ a {
 }
 
 a:hover {
-  color: #d85cdb;
+  color: var(--purple);
 }
 
 /* MOBILE */
@@ -223,11 +393,19 @@ a:hover {
     min-width: auto !important;
     padding: 0.6rem 1rem !important;
   }
+
+  .quarto-listing-container-grid {
+    width: 92vw !important;
+  }
 }
 
 @media (max-width: 850px) {
   .navbar {
     padding: 1.2rem 1rem !important;
+  }
+
+  .navbar > .container-fluid {
+    flex-wrap: wrap !important;
   }
 
   .navbar-brand {
@@ -241,17 +419,44 @@ a:hover {
     max-height: 75px !important;
   }
 
-  .projects-intro {
-    font-size: 1.25rem;
-    margin-top: 4rem;
+  .navbar-nav {
+    flex-wrap: wrap !important;
+  }
+
+  main.content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .projects-intro-wrap {
+    margin-top: 2rem;
     margin-bottom: 3rem;
+  }
+
+  .projects-intro {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.4rem;
   }
 
   .quarto-grid-item {
     min-height: auto !important;
+    max-width: 100% !important;
   }
 
-  .quarto-grid-item img {
-    height: 260px !important;
+  .quarto-grid-item img,
+  .quarto-grid-item .thumbnail-image,
+  .quarto-grid-item .card-img-top,
+  .quarto-grid-item .listing-image img,
+  .quarto-grid-item .thumbnail img {
+    height: 220px !important;
+  }
+
+  .listing-title {
+    font-size: 1.18rem !important;
+  }
+
+  .listing-description {
+    font-size: 0.88rem !important;
+    max-width: 95% !important;
   }
 }

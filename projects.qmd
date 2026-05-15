@@ -1,14 +1,20 @@
 ---
 title: ""
+page-layout: full
 
 listing:
   contents: posts
   type: grid
-  image-height: 330px
+  image-height: 240px
   categories: false
   sort: "date desc"
+  date-format: "MMM YYYY"
 ---
 
-<div class="projects-intro">
-  Check out my projects :)
+```{=html}
+<div class="projects-intro-wrap">
+  <div class="projects-intro">
+    Check out my projects!
+  </div>
 </div>
+```
