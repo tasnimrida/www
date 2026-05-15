@@ -146,13 +146,14 @@ h2,
 h3,
 h4 {
   font-family: "Fraunces", serif !important;
-  color: var(--black);
+  color: var(--black) !important;
   letter-spacing: -0.03em;
 }
 
 p,
 li {
   font-family: "Inter", sans-serif;
+  color: var(--black);
 }
 
 /* HIDE DEFAULT QUARTO PAGE TITLES */
@@ -196,7 +197,7 @@ h1.title {
   letter-spacing: 0;
 
   text-align: center;
-  color: var(--black);
+  color: var(--black) !important;
 
   background: var(--white);
   border: 2px solid var(--black);
@@ -241,6 +242,24 @@ h1.title {
 
   position: relative !important;
   text-align: center !important;
+  color: var(--black) !important;
+}
+
+/* FORCE ALL CARD TEXT BLACK */
+
+.quarto-grid-item,
+.quarto-grid-item *,
+.quarto-listing-container-grid,
+.quarto-listing-container-grid *,
+.card,
+.card *,
+.listing-title,
+.listing-title *,
+.listing-description,
+.listing-description *,
+.listing-date,
+.card-attribution {
+  color: var(--black) !important;
 }
 
 /* REMOVE WEIRD QUARTO/CARD DIVIDER LINES */
@@ -300,6 +319,7 @@ h1.title {
   padding: 1.05rem 1.2rem 1.25rem 1.2rem !important;
   border: none !important;
   text-align: center !important;
+  color: var(--black) !important;
 }
 
 .listing-title {
@@ -317,9 +337,15 @@ h1.title {
   text-align: center !important;
   display: block !important;
   width: 100% !important;
+
+  color: var(--black) !important;
 }
 
-.listing-title a {
+.listing-title a,
+.listing-title a:link,
+.listing-title a:visited,
+.listing-title a:hover,
+.listing-title a:active {
   color: var(--black) !important;
   text-decoration: none !important;
   border: none !important;
@@ -327,11 +353,6 @@ h1.title {
   text-align: center !important;
   display: block !important;
   width: 100% !important;
-}
-
-.listing-title a:hover {
-  color: var(--purple) !important;
-  text-decoration: none !important;
 }
 
 .listing-description {
@@ -354,7 +375,7 @@ h1.title {
   font-family: "Inter", sans-serif !important;
   font-size: 0.78rem !important;
   color: var(--black) !important;
-  opacity: 0.7;
+  opacity: 0.65;
   border: none !important;
 
   text-align: right !important;

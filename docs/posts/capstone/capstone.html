@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2024-08-01">
-<meta name="description" content="A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health.">
+<meta name="description" content="A statistical investigation of county-level predictors of health disparities, utilizing Gradient Boosted Trees and regression to identify key social determinants of health.">
 
 <title>Tasnim Rida - Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups</title>
 <style>
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A statistical investigation into county-level predictors of health disparities, utilizing Gradient Boosted Trees and Linear Regression to identify key social determinants of health.
+    A statistical investigation of county-level predictors of health disparities, utilizing Gradient Boosted Trees and regression to identify key social determinants of health.
   </div>
 </div>
 
@@ -163,9 +163,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 <style>
+
+:root {
+  --bg: #f4f4f4;
+  --black: #111;
+  --white: #ffffff;
+  --purple: #D85CDB;
+  --green: #b7ff91;
+  --soft-purple: #F7E8F8;
+}
 
 html,
 body {
@@ -174,9 +183,9 @@ body {
 }
 
 body {
-  background: #f7f7f7;
+  background: var(--bg);
   overflow-x: hidden;
-  color: #111;
+  color: var(--black);
 }
 
 #quarto-content,
@@ -195,19 +204,20 @@ main.content {
 }
 
 .quarto-title-block {
-  display: none;
+  display: none !important;
 }
 
 /* ---------------- POSTER CANVAS ---------------- */
 
 .poster-page {
-  width: min(1200px, calc(100vw - 1rem));
+  width: min(1250px, calc(100vw - 1rem));
   min-height: auto;
   margin: 1rem auto 0;
-  background: #f7f7f7;
+  background: var(--bg);
   padding: 3rem 2rem 1rem;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  color: var(--black);
 }
 
 /* ---------------- HEADER ---------------- */
@@ -222,9 +232,10 @@ main.content {
   font-family: "Fraunces", serif;
   font-size: clamp(1.8rem, 3vw, 2.45rem);
   line-height: 1.08;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 1rem;
   letter-spacing: 0;
+  color: var(--black);
 }
 
 .poster-header p {
@@ -233,12 +244,14 @@ main.content {
   line-height: 1.18;
   max-width: 660px;
   margin: 0 auto 0.8rem;
+  color: var(--black);
 }
 
 .poster-date {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   margin-bottom: 1.6rem;
+  color: var(--black);
 }
 
 .nav-buttons {
@@ -248,21 +261,30 @@ main.content {
 }
 
 .nav-buttons a {
-  font-family: "Fraunces", serif;
-  color: #111;
+  font-family: "Inter", sans-serif;
+  color: var(--black);
   text-decoration: none;
-  font-size: 1.45rem;
-  width: 2.4rem;
-  height: 2.4rem;
+  font-size: 1.15rem;
+  width: 2.8rem;
+  height: 2.8rem;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  border: 2px solid var(--black);
   border-radius: 999px;
+  background: var(--white);
+  box-shadow: 5px 5px 0 var(--green);
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .nav-buttons a:hover {
-  color: #8f3cff;
-  background: rgba(255, 255, 255, 0.55);
+  color: var(--black);
+  background: var(--green);
+  box-shadow: 5px 5px 0 var(--purple);
+  transform: translateY(-2px);
 }
 
 .nav-buttons i {
@@ -273,9 +295,9 @@ main.content {
 
 .poster-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  column-gap: 2.2rem;
-  row-gap: 3.5rem;
+  grid-template-columns: 0.92fr 1.08fr;
+  column-gap: 3rem;
+  row-gap: 4rem;
   align-items: center;
 }
 
@@ -286,22 +308,33 @@ main.content {
 .question {
   position: relative;
   font-family: "Fraunces", serif;
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
-  line-height: 1.1;
-  font-weight: 600;
-  max-width: 520px;
-  margin: 0 auto 2.4rem auto;
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  line-height: 1.08;
+  font-weight: 700;
+  max-width: 560px;
+  margin: 0 auto 2.9rem auto;
   text-align: center;
+  color: var(--black);
 }
 
+/* ---------------- PROJECT-STYLE CARDS ---------------- */
+
+.section-card,
+.image-panel,
+.presentation-combined-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+/* content / work cards = green shadow */
 .section-card {
   position: relative;
-  background: #fff;
-  border-radius: 12px;
   min-height: auto;
-  padding: 2.8rem 1.4rem 1.4rem;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.18);
-  box-sizing: border-box;
+  padding: 3.8rem 2rem 2rem;
+  box-shadow: 10px 10px 0 var(--green);
 }
 
 .section-card.large {
@@ -310,63 +343,76 @@ main.content {
 
 .section-tag {
   position: absolute;
-  top: -1.05rem;
-  left: 1.6rem;
-  background: #b8ff92;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--green);
+  border: 2px solid var(--black);
   border-radius: 999px;
-  padding: 0.68rem 1.55rem;
+
+  padding: 0.75rem 2rem;
+
   font-family: "Fraunces", serif;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 700;
   text-transform: none;
   white-space: nowrap;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  color: var(--black);
 }
 
 .section-card p,
 .section-card li {
   font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--black);
+}
+
+.section-card p {
+  margin: 0;
 }
 
 .section-card ul {
-  padding-left: 1.1rem;
-  margin: 0;
+  padding-left: 1.2rem;
+  margin: 1rem 0 0;
 }
 
 .section-card li {
   margin-bottom: 0.65rem;
 }
 
-/* ---------------- IMAGE CARDS ---------------- */
+/* ---------------- IMAGE / GRAPH CARDS ---------------- */
 
 .image-panel {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.18);
-  box-sizing: border-box;
+  padding: 1.65rem;
+  box-shadow: 10px 10px 0 var(--purple);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-panel img {
   width: 100%;
   display: block;
-  border-radius: 4px;
+  border-radius: 16px;
+  object-fit: contain;
 }
 
 .map-panel {
   margin-top: 0;
   align-self: center;
   justify-self: center;
-  width: 88%;
+  width: 92%;
 }
 
 .scatter-panel {
   margin-top: 0;
   align-self: center;
   justify-self: center;
-  width: 112%;
+  width: 106%;
 }
 
 /* ---------------- METHODOLOGY ---------------- */
@@ -374,9 +420,10 @@ main.content {
 .methodology-card {
   align-self: center;
   justify-self: center;
-  width: 85%;
-  padding-top: 3.35rem;
+  width: 88%;
+  padding-top: 3.8rem;
   padding-bottom: 2.15rem;
+  box-shadow: 10px 10px 0 var(--green);
 }
 
 /* ---------------- KEY FINDINGS ---------------- */
@@ -391,32 +438,37 @@ main.content {
 
 .finding-card {
   min-height: auto;
-  padding-top: 3.2rem;
-  padding-bottom: 1.9rem;
+  padding-top: 3.8rem;
+  padding-bottom: 2rem;
   width: 92%;
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  box-shadow: 10px 10px 0 var(--green);
 }
 
 .finding-card .section-tag {
   font-family: "Fraunces", serif;
-  font-size: 0.95rem;
-  padding: 0.75rem 1.7rem;
+  font-size: 1.05rem;
+  padding: 0.75rem 2rem;
   text-transform: none;
 }
 
 .finding-pill {
-  background: #e7dbff;
-  color: #111;
-  border-radius: 26px;
-  padding: 1.55rem 1.5rem;
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 24px;
+
+  padding: 1.25rem 1.35rem;
   text-align: center;
+
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  line-height: 1.38;
-  margin: 0 auto 1.45rem auto;
+  line-height: 1.45;
+
+  margin: 0 auto 1.25rem auto;
   width: 94%;
   box-sizing: border-box;
 }
@@ -427,48 +479,39 @@ main.content {
 
 .finding-pill strong {
   font-weight: 700;
+  color: var(--black);
 }
 
-/* ---------------- PRESENTATION PHOTO + NOTE ---------------- */
+/* ---------------- PRESENTATION PHOTO + NOTE IN ONE CARD ---------------- */
 
-.presentation-stack {
+.presentation-row {
   grid-column: 1 / -1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  justify-self: center;
-  width: 38%;
-  margin-bottom: 0;
-}
-
-.poster-photo-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.18);
-  box-sizing: border-box;
   width: 100%;
 }
 
-.poster-photo-card img {
+.presentation-combined-card {
+  width: 42%;
+  max-width: 560px;
+  padding: 1rem 1rem 0.95rem;
+  box-shadow: 10px 10px 0 var(--green);
+}
+
+.presentation-combined-card img {
   width: 100%;
   display: block;
-  border-radius: 4px;
+  border-radius: 18px;
+  margin-bottom: 1rem;
 }
 
-.note-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 0.85rem 1rem;
-  text-align: center;
+.presentation-note {
   font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.25;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.18);
-  box-sizing: border-box;
-  width: 92%;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--black);
+  margin: 0;
 }
 
 /* ---------------- MOBILE ---------------- */
@@ -483,6 +526,7 @@ main.content {
 
   .poster-grid {
     grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
 
   .poster-header {
@@ -497,7 +541,7 @@ main.content {
   .question {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.6rem;
     text-align: center;
   }
 
@@ -506,7 +550,8 @@ main.content {
   .methodology-card,
   .finding-row,
   .finding-card,
-  .presentation-stack {
+  .presentation-row,
+  .presentation-combined-card {
     width: 100%;
   }
 
@@ -516,13 +561,25 @@ main.content {
     min-height: auto;
   }
 
+  .section-card {
+    padding: 3.5rem 1.35rem 1.6rem;
+  }
+
+  .image-panel {
+    padding: 1rem;
+  }
+
   .finding-pill {
     width: 100%;
     font-size: 0.9rem;
   }
 
-  .note-card {
-    width: 100%;
+  .presentation-combined-card {
+    padding: 1rem;
+  }
+
+  .presentation-note {
+    font-size: 0.88rem;
   }
 }
 
@@ -606,13 +663,12 @@ main.content {
       </div>
     </section>
 
-    <section class="presentation-stack">
-      <div class="poster-photo-card">
+    <section class="presentation-row">
+      <div class="presentation-combined-card">
         <img src="plot5.png" alt="Research poster presentation photo">
-      </div>
-
-      <div class="note-card">
-        This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.
+        <p class="presentation-note">
+          This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.
+        </p>
       </div>
     </section>
 
