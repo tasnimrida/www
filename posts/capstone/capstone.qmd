@@ -154,12 +154,13 @@ main.content {
   align-self: center;
 }
 
+/* same size + weight as Sher page question */
 .question {
   position: relative;
   font-family: "Fraunces", serif;
-  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
   line-height: 1.08;
-  font-weight: 700;
+  font-weight: 400;
   max-width: 560px;
   margin: 0 auto 2.9rem auto;
   text-align: center;
@@ -277,7 +278,7 @@ main.content {
 
 /* ---------------- KEY FINDINGS ---------------- */
 
-.finding-row {
+.key-findings-row {
   grid-column: 1 / -1;
   width: 100%;
   display: flex;
@@ -285,53 +286,111 @@ main.content {
   box-sizing: border-box;
 }
 
-.finding-card {
-  min-height: auto;
-  padding-top: 3.8rem;
-  padding-bottom: 2rem;
-  width: 92%;
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
+.key-findings-section {
+  width: 82%;
+  max-width: 920px;
+  margin: 0 auto;
   box-sizing: border-box;
-  box-shadow: 10px 10px 0 var(--green);
 }
 
-.finding-card .section-tag {
+.key-findings-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin: 0 auto 2rem auto;
+
   font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  padding: 0.75rem 2rem;
-  text-transform: none;
+  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--black);
 }
 
-.finding-pill {
-  background: var(--white);
-  color: var(--black);
-  border: 2px solid var(--black);
-  border-radius: 24px;
+.key-findings-heading img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
 
-  padding: 1.25rem 1.35rem;
-  text-align: center;
+.key-finding-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+
+  width: 100%;
+  margin: 0 auto 1.35rem auto;
+
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 18px;
+
+  padding: 1.25rem 1.6rem;
+  box-sizing: border-box;
+
+  box-shadow: 7px 7px 0 var(--green);
 
   font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.45;
-
-  margin: 0 auto 1.25rem auto;
-  width: 94%;
-  box-sizing: border-box;
+  color: var(--black);
 }
 
-.finding-pill:last-child {
+.key-finding-card:last-child {
   margin-bottom: 0;
 }
 
-.finding-pill strong {
-  font-weight: 700;
+.key-finding-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  background: #efffe8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-finding-icon svg {
+  width: 34px;
+  height: 34px;
+  stroke: var(--black);
+  stroke-width: 2.3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.key-finding-icon .purple-fill {
+  fill: var(--purple);
+  stroke: var(--black);
+}
+
+.key-finding-label {
+  margin: 0 0 0.35rem 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--black);
+
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.key-finding-text p {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.42;
   color: var(--black);
 }
 
-/* ---------------- PRESENTATION PHOTO + NOTE IN ONE CARD ---------------- */
+/* ---------------- PRESENTATION PHOTO + NOTE IN SHER-STYLE CARD ---------------- */
 
 .presentation-row {
   grid-column: 1 / -1;
@@ -341,24 +400,28 @@ main.content {
 }
 
 .presentation-combined-card {
-  width: 42%;
-  max-width: 560px;
-  padding: 1rem 1rem 0.95rem;
+  width: 72%;
+  max-width: 850px;
+  padding: 1.35rem 1.5rem;
   box-shadow: 10px 10px 0 var(--green);
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .presentation-combined-card img {
   width: 100%;
   display: block;
-  border-radius: 18px;
-  margin-bottom: 1rem;
+  border-radius: 20px;
 }
 
 .presentation-note {
   font-family: "Inter", sans-serif;
   font-size: 0.92rem;
   line-height: 1.45;
-  text-align: center;
+  text-align: left;
   color: var(--black);
   margin: 0;
 }
@@ -392,21 +455,22 @@ main.content {
     margin-right: auto;
     margin-bottom: 2.6rem;
     text-align: center;
+    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+    font-weight: 400;
   }
 
   .map-panel,
   .scatter-panel,
   .methodology-card,
-  .finding-row,
-  .finding-card,
+  .key-findings-row,
+  .key-findings-section,
   .presentation-row,
   .presentation-combined-card {
     width: 100%;
   }
 
   .section-card,
-  .section-card.large,
-  .finding-card {
+  .section-card.large {
     min-height: auto;
   }
 
@@ -418,17 +482,52 @@ main.content {
     padding: 1rem;
   }
 
-  .finding-pill {
-    width: 100%;
-    font-size: 0.9rem;
+  .key-findings-heading {
+    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+    font-weight: 400;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .key-findings-heading img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .key-finding-card {
+    grid-template-columns: 58px 1fr;
+    padding: 1rem;
+    gap: 0.9rem;
+    box-shadow: 6px 6px 0 var(--green);
+    margin-bottom: 1.2rem;
+  }
+
+  .key-finding-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .key-finding-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .key-finding-label {
+    font-size: 0.95rem;
+  }
+
+  .key-finding-text p {
+    font-size: 0.8rem;
   }
 
   .presentation-combined-card {
+    grid-template-columns: 1fr;
     padding: 1rem;
   }
 
   .presentation-note {
     font-size: 0.88rem;
+    text-align: center;
   }
 }
 
@@ -494,27 +593,85 @@ main.content {
       </ul>
     </section>
 
-    <section class="finding-row">
-      <div class="section-card finding-card">
-        <div class="section-tag">Key Findings</div>
+    <section class="key-findings-row">
+      <div class="key-findings-section">
 
-        <div class="finding-pill">
-          <strong>Socioeconomic Impact:</strong> The analysis confirmed that increases in income inequality and unemployment are associated with increases in years of premature death. Conversely, as high school completion percentages increase, premature deaths decrease.
+        <div class="key-findings-heading">
+          <img src="../../assets/logo.png" alt="">
+          <span>Key Findings</span>
+          <img src="../../assets/logo.png" alt="">
         </div>
 
-        <div class="finding-pill">
-          <strong>Variable Importance:</strong> Findings revealed a contrast between the two approaches. The multiple linear regression identified AIAN population percentage as the most important variable, likely due to the model's sensitivity to the small population percentages of this group across the U.S.
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="24" cy="29" r="5.5"></circle>
+              <circle cx="40" cy="29" r="5.5"></circle>
+              <circle cx="32" cy="22" r="6"></circle>
+              <path d="M14 49c1.3-8 6.5-12.5 13-12.5"></path>
+              <path d="M50 49c-1.3-8-6.5-12.5-13-12.5"></path>
+              <path d="M22 51c1-9 6-14.5 10-14.5s9 5.5 10 14.5"></path>
+              <path class="purple-fill" d="M32 13s-6.5-3.8-6.5-8.2c0-2.3 1.7-4 4-4 1.3 0 2.5.7 3.2 1.9C33.4 1.5 34.6.8 36 .8c2.3 0 4 1.7 4 4C40 9.2 32 13 32 13z"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Socioeconomic Impact</div>
+            <p>
+              Higher income inequality and unemployment are linked to more years of premature death. Higher high school completion rates are linked to fewer premature deaths.
+            </p>
+          </div>
         </div>
 
-        <div class="finding-pill">
-          <strong>Model Comparison:</strong> Cross validation revealed that the gradient boosted tree effectively captured relationships in the data that the multiple linear regression did not.
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M12 52h40"></path>
+              <rect x="16" y="37" width="7" height="15"></rect>
+              <rect x="29" y="28" width="7" height="24"></rect>
+              <rect x="42" y="18" width="7" height="34"></rect>
+              <path class="purple-fill" d="M28 8.5l3 6.1 6.7 1-4.9 4.8 1.2 6.8-6-3.2-6 3.2 1.2-6.8-4.9-4.8 6.7-1 3-6.1z"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Variable Importance</div>
+            <p>
+              Multiple linear regression identified AIAN population percentage as the most important variable, likely due to the model's sensitivity to this group's small population percentages across the U.S.
+            </p>
+          </div>
         </div>
+
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M10 52h44"></path>
+              <path d="M14 43l10-11 9 7 16-22"></path>
+              <circle cx="14" cy="43" r="3.2" class="purple-fill"></circle>
+              <circle cx="24" cy="32" r="3.2" class="purple-fill"></circle>
+              <circle cx="33" cy="39" r="3.2" class="purple-fill"></circle>
+              <circle cx="49" cy="17" r="3.2" class="purple-fill"></circle>
+              <path d="M14 16h14"></path>
+              <path d="M14 23h20"></path>
+              <path d="M14 9h26"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Model Comparison</div>
+            <p>
+              Cross-validation showed the gradient boosted tree captured relationships in the data that multiple linear regression did not.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="presentation-row">
       <div class="presentation-combined-card">
-        <img src="plot5.png" alt="Research poster presentation photo">
+        <img src="plot5.png" alt="Research poster or presentation image">
+
         <p class="presentation-note">
           This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.
         </p>

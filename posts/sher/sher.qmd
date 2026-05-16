@@ -1,87 +1,729 @@
 ---
 title: "Social Rejection and Risk-Taking in Ingroup and Outgroup Situations"
-description: "A behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity." 
+description: "A behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity."
 image: pic2.jpg
 date: March 2024
-about:
-  template: solana
-  links:
-    - icon: pip
-      text: Poster
-      href: https://www.cmu.edu/dietrich/psychology/sherlab/publications/pdf/sbs-poster.pdf
+page-layout: full
+
+format:
+  html:
+    theme: cosmo
 ---
+
 ```{=html}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  /* Hide sidebar image */
-  .about-entity img {
-    display: none;
+
+:root {
+  --bg: #f4f4f4;
+  --black: #111;
+  --white: #ffffff;
+  --purple: #D85CDB;
+  --green: #b7ff91;
+  --soft-purple: #F7E8F8;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+  color: var(--black);
+}
+
+#quarto-content,
+#quarto-document-content,
+.page-columns,
+.content,
+main.content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+main.content {
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.quarto-title-block {
+  display: none !important;
+}
+
+/* ---------------- POSTER CANVAS ---------------- */
+
+.poster-page {
+  width: min(1250px, calc(100vw - 1rem));
+  margin: 1rem auto 0;
+  background: var(--bg);
+  padding: 3rem 2rem 1rem;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+}
+
+/* ---------------- HEADER ---------------- */
+
+.poster-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 4rem;
+}
+
+.poster-header h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.08;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.poster-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.18;
+  max-width: 680px;
+  margin: 0 auto 0.8rem;
+  color: var(--black);
+}
+
+.poster-date {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 1.6rem;
+  color: var(--black);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.nav-buttons a {
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.15rem;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 5px 5px 0 var(--green);
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.nav-buttons a:hover {
+  color: var(--black);
+  background: var(--green);
+  box-shadow: 5px 5px 0 var(--purple);
+  transform: translateY(-2px);
+}
+
+.nav-buttons i {
+  line-height: 1;
+}
+
+/* ---------------- MAIN LAYOUT ---------------- */
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+  row-gap: 4rem;
+  align-items: center;
+}
+
+/* ---------------- QUESTION ---------------- */
+
+.question {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+  line-height: 1.08;
+  font-weight: 400;
+  max-width: 590px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--black);
+}
+
+/* ---------------- PROJECT-STYLE CARDS ---------------- */
+
+.section-card,
+.image-panel,
+.presentation-combined-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+/* content / work cards = green shadow */
+.section-card {
+  position: relative;
+  padding: 3.8rem 2rem 2rem;
+  box-shadow: 10px 10px 0 var(--green);
+}
+
+.section-tag {
+  position: absolute;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--green);
+  border: 2px solid var(--black);
+  border-radius: 999px;
+
+  padding: 0.75rem 2rem;
+
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: none;
+  white-space: nowrap;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.section-card p,
+.section-card li {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--black);
+}
+
+.section-card p {
+  margin: 0;
+}
+
+.section-card ul {
+  padding-left: 1.2rem;
+  margin: 1rem 0 0;
+}
+
+.section-card li {
+  margin-bottom: 0.65rem;
+}
+
+/* ---------------- IMAGE / GRAPH CARDS ---------------- */
+
+.image-panel {
+  padding: 1.4rem;
+  box-shadow: 10px 10px 0 var(--purple);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-panel img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.graph-card {
+  width: 96%;
+  justify-self: center;
+}
+
+.plot-2-card {
+  width: 92%;
+}
+
+.plot-3-card {
+  width: 98%;
+}
+
+.plot-4-card {
+  width: 96%;
+}
+
+/* ---------------- RESEARCH OVERVIEW + METHODOLOGY ---------------- */
+
+.overview-card {
+  width: 90%;
+  justify-self: center;
+}
+
+.methodology-card {
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+  padding-top: 3.35rem;
+  padding-bottom: 1.45rem;
+}
+
+.methodology-card p,
+.methodology-card li {
+  line-height: 1.38;
+}
+
+.methodology-card ul {
+  margin-top: 0.65rem;
+}
+
+.methodology-card li {
+  margin-bottom: 0.35rem;
+}
+
+.methodology-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------- KEY FINDINGS ---------------- */
+
+.key-findings-row {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.key-findings-section {
+  width: 82%;
+  max-width: 920px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.key-findings-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin: 0 auto 2rem auto;
+
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--black);
+}
+
+.key-findings-heading img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.key-finding-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+
+  width: 100%;
+  margin: 0 auto 1.35rem auto;
+
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 18px;
+
+  padding: 1.25rem 1.6rem;
+  box-sizing: border-box;
+
+  box-shadow: 7px 7px 0 var(--green);
+
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+}
+
+.key-finding-card:last-child {
+  margin-bottom: 0;
+}
+
+.key-finding-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  background: #efffe8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-finding-icon svg {
+  width: 34px;
+  height: 34px;
+  stroke: var(--black);
+  stroke-width: 2.3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.key-finding-icon .purple-fill {
+  fill: var(--purple);
+  stroke: var(--black);
+}
+
+.key-finding-label {
+  margin: 0 0 0.35rem 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--black);
+
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.key-finding-text p {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.42;
+  color: var(--black);
+}
+
+/* ---------------- FINAL IMAGE + NOTE CARD ---------------- */
+
+.presentation-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.presentation-combined-card {
+  width: 72%;
+  max-width: 850px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: 10px 10px 0 var(--green);
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.presentation-combined-card img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.presentation-note {
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: left;
+  color: var(--black);
+  margin: 0;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 760px) {
+  .poster-page {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 1rem 1rem;
   }
 
-  /* Create space on the sides for arrows */
-  #sherCarousel {
-    padding-left: 60px;
-    padding-right: 60px;
+  .poster-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
 
-  /* Style the images with a border */
-  .carousel-item img {
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
+  .poster-header {
+    margin-bottom: 2.5rem;
   }
 
-  /* Move arrows outside and make them dark */
-  .carousel-control-prev, .carousel-control-next {
-    width: 50px;
-    filter: invert(1);
+  .nav-buttons {
+    gap: 0.9rem;
+    flex-wrap: wrap;
   }
 
-  .carousel-control-prev { left: 0; }
-  .carousel-control-next { right: 0; }
+  .question {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .graph-card,
+  .plot-2-card,
+  .plot-3-card,
+  .plot-4-card,
+  .overview-card,
+  .methodology-card,
+  .key-findings-row,
+  .key-findings-section,
+  .presentation-row,
+  .presentation-combined-card {
+    width: 100%;
+  }
+
+  .section-card {
+    padding: 3.5rem 1.35rem 1.6rem;
+  }
+
+  .methodology-card {
+    padding-top: 3.25rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .image-panel {
+    padding: 1rem;
+  }
+
+  .key-findings-heading {
+    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .key-findings-heading img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .key-finding-card {
+    grid-template-columns: 58px 1fr;
+    padding: 1rem;
+    gap: 0.9rem;
+    box-shadow: 6px 6px 0 var(--green);
+    margin-bottom: 1.2rem;
+  }
+
+  .key-finding-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .key-finding-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .key-finding-label {
+    font-size: 0.95rem;
+  }
+
+  .key-finding-text p {
+    font-size: 0.8rem;
+  }
+
+  .presentation-combined-card {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .presentation-note {
+    font-size: 0.88rem;
+    text-align: center;
+  }
+}
+
 </style>
 
-<div id="sherCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 950px; margin: 20px auto 40px auto;">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="pic2.jpg" class="d-block w-100" alt="Experimental Design Overview">
-    </div>
-    <div class="carousel-item">
-      <img src="plot2.png" class="d-block w-100" alt="Rejection Conditions">
-    </div>
-    <div class="carousel-item">
-      <img src="plot3.png" class="d-block w-100" alt="Risk-Taking Results">
-    </div>
-    <div class="carousel-item">
-      <img src="plot4.png" class="d-block w-100" alt="Interaction Effects">
-    </div>
-  </div>
+<div class="poster-page">
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#sherCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#sherCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </button>
+  <header class="poster-header">
+    <h1>Social Rejection and Risk-Taking in Ingroup and Outgroup Situations</h1>
+
+    <p>
+      A behavioral study examining how social rejection influences risk-taking behavior across varying levels of rejection clarity and group identity.
+    </p>
+
+    <div class="poster-date">March 2024</div>
+
+    <nav class="nav-buttons">
+      <a href="https://www.cmu.edu/dietrich/psychology/sherlab/publications/pdf/sbs-poster.pdf" aria-label="Poster" title="Poster">
+        <i class="bi bi-file-earmark-image"></i>
+      </a>
+    </nav>
+  </header>
+
+  <main class="poster-grid">
+
+    <!-- ROW 1: BIG QUESTION + PLOT 2 -->
+
+    <section>
+      <div class="question">
+        How does social rejection shape risk-taking behavior across ingroup and outgroup contexts?
+      </div>
+    </section>
+
+    <section class="image-panel graph-card plot-2-card">
+      <img src="plot2.png" alt="Rejection conditions">
+    </section>
+
+    <!-- ROW 2: RESEARCH OVERVIEW + METHODOLOGY -->
+
+    <section class="section-card overview-card">
+      <div class="section-tag">Research Overview</div>
+      <p>
+        This project investigates how experiences of social rejection influence individuals’ willingness to engage in risk-taking behavior. In particular, it examines how features of social experiences, including rejection clarity, explicit versus ambiguous, and group membership, ingroup versus outgroup, shape behavioral responses.
+      </p>
+    </section>
+
+    <section class="section-card methodology-card">
+      <div class="section-tag">Methodology</div>
+      <p>
+        The study employed a 2 × 2 between-subjects experimental design to examine how different social rejection contexts influence behavior and affect.
+      </p>
+      <ul>
+        <li>Group status was manipulated as ingroup versus outgroup.</li>
+        <li>Rejection clarity was manipulated as ambiguous versus explicit.</li>
+        <li>Social rejection was modeled using a modified Cyberball paradigm, an online ball-tossing game commonly used to study social exclusion.</li>
+        <li>Participants then completed a behavioral social risk-taking task and self-report measures assessing rumination, self-esteem, and negative affect.</li>
+      </ul>
+    </section>
+
+    <!-- ROW 3: GRAPHS UNDERNEATH -->
+
+    <section class="image-panel graph-card plot-3-card">
+      <img src="plot3.png" alt="Risk-taking results">
+    </section>
+
+    <section class="image-panel graph-card plot-4-card">
+      <img src="plot4.png" alt="Interaction effects">
+    </section>
+
+    <!-- ROW 4: KEY FINDINGS -->
+
+    <section class="key-findings-row">
+      <div class="key-findings-section">
+
+        <div class="key-findings-heading">
+          <img src="../../assets/logo.png" alt="">
+          <span>Key Findings</span>
+          <img src="../../assets/logo.png" alt="">
+        </div>
+
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="24" cy="29" r="5.5"></circle>
+              <circle cx="40" cy="29" r="5.5"></circle>
+              <circle cx="32" cy="22" r="6"></circle>
+              <path d="M14 49c1.3-8 6.5-12.5 13-12.5"></path>
+              <path d="M50 49c-1.3-8-6.5-12.5-13-12.5"></path>
+              <path d="M22 51c1-9 6-14.5 10-14.5s9 5.5 10 14.5"></path>
+              <path class="purple-fill" d="M32 13s-6.5-3.8-6.5-8.2c0-2.3 1.7-4 4-4 1.3 0 2.5.7 3.2 1.9C33.4 1.5 34.6.8 36 .8c2.3 0 4 1.7 4 4C40 9.2 32 13 32 13z"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Manipulation Check</div>
+            <p>
+              The experimental manipulation was successful, with participants in the explicit condition reporting significantly higher perceived rejection than those in the ambiguous condition.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M12 52h40"></path>
+              <rect x="16" y="37" width="7" height="15"></rect>
+              <rect x="29" y="28" width="7" height="24"></rect>
+              <rect x="42" y="18" width="7" height="34"></rect>
+              <path class="purple-fill" d="M28 8.5l3 6.1 6.7 1-4.9 4.8 1.2 6.8-6-3.2-6 3.2 1.2-6.8-4.9-4.8 6.7-1 3-6.1z"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Rejection Clarity Effects</div>
+            <p>
+              While rejection clarity strongly shaped participants’ perception of exclusion, it did not translate into significant differences in social risk-taking or rumination.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M10 52h44"></path>
+              <path d="M14 43l10-11 9 7 16-22"></path>
+              <circle cx="14" cy="43" r="3.2" class="purple-fill"></circle>
+              <circle cx="24" cy="32" r="3.2" class="purple-fill"></circle>
+              <circle cx="33" cy="39" r="3.2" class="purple-fill"></circle>
+              <circle cx="49" cy="17" r="3.2" class="purple-fill"></circle>
+              <path d="M14 16h14"></path>
+              <path d="M14 23h20"></path>
+              <path d="M14 9h26"></path>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Group Identity Effects</div>
+            <p>
+              Rejection from ingroup versus outgroup members did not produce significant differences in social risk-taking or rumination, indicating that group membership alone was not a strong driver of behavioral response in this study.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-finding-card">
+          <div class="key-finding-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 8v48"></path>
+              <path d="M18 20h28"></path>
+              <path d="M22 32h20"></path>
+              <path d="M26 44h12"></path>
+              <circle cx="32" cy="8" r="4" class="purple-fill"></circle>
+              <circle cx="18" cy="20" r="3.2" class="purple-fill"></circle>
+              <circle cx="46" cy="20" r="3.2" class="purple-fill"></circle>
+              <circle cx="22" cy="32" r="3.2" class="purple-fill"></circle>
+              <circle cx="42" cy="32" r="3.2" class="purple-fill"></circle>
+              <circle cx="26" cy="44" r="3.2" class="purple-fill"></circle>
+              <circle cx="38" cy="44" r="3.2" class="purple-fill"></circle>
+            </svg>
+          </div>
+
+          <div class="key-finding-text">
+            <div class="key-finding-label">Moderator Effect</div>
+            <p>
+              A marginal effect suggested that individuals with moderate identity centrality may be more psychologically responsive, particularly in terms of rumination, when experiencing ambiguous rejection from ingroup members.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ROW 5: PIC 2 + NOTE -->
+
+    <section class="presentation-row">
+      <div class="presentation-combined-card">
+        <img src="pic2.jpg" alt="Research poster or presentation image">
+
+        <p class="presentation-note">
+          This research was conducted as part of Dr. Michael Trujillo’s Stigma, Health Equity, and Resilience Lab at Carnegie Mellon University. Findings were presented at the Society for Personality and Social Psychology 2024 Annual Convention and selected as the winning poster for CMU Psychology Department’s Meeting of the Minds 2024.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
 </div>
 ```
-
-# Research Overview
-
-This project investigates how experiences of social rejection influence individuals’ willingness to engage in risk-taking behavior. In particular, it examines how features of social experiences, including rejection clarity (explicit vs. ambiguous) and group membership (ingroup vs. outgroup), shape behavioral responses.
-
-# Methodology
-
-The study employed a 2 (group status: ingroup vs. outgroup) × 2 (rejection clarity: ambiguous vs. explicit) between-subjects experimental design to examine how different in social rejection contexts influence behavior and affect.
-
-Social rejection was manipulated using a modified Cyberball paradigm (online ball-tossing game used to study the psychological effects of social exclusion), with group membership defined by the racial identity of other players. Participants then completed a behavioral task assessing social risk-taking, along with self-report measures capturing emotional and cognitive responses, including rumination, self-esteem, and negative affect.
-
-# Key Findings
-* Manipulation Check: The experimental manipulation was successful, with participants in the explicit condition reporting significantly higher perceived rejection than those in the ambiguous condition.
-
-* Rejection Clarity Effects: While rejection clarity strongly shaped participants’ perception of exclusion, it did not translate into significant differences in social risk-taking or rumination. This suggests that subjective experience of rejection may be more sensitive to clarity than behavioral or cognitive responses.
-
-* Group Identity Effects: Rejection from ingroup versus outgroup members did not produce significant differences in social risk-taking or rumination, indicating that group membership alone was not a strong driver of behavioral response in this study.
-
-* Moderator Effect: A marginal effect suggested that individuals with moderate identity centrality may be more psychologically responsive—particularly in terms of rumination—when experiencing ambiguous rejection from ingroup members.
-
-***
-*This research was conducted as part of the Dr. Michael Trujillo's Stigma, Health Equity, and Resilience Lab (SHER) Lab at Carnegie Mellon University. Findings were presented at the Society for Personality and Social Psychology 2024 Annual Convention and selected as the winning poster for the Psychology Department at CMU’s Meeting of the Minds 2024.*
