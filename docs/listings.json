@@ -2,8 +2,11 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/posts/bodypol/bodypol.html",
+      "/posts/ideate/ideate.html",
       "/posts/capstone/capstone.html",
-      "/posts/sher/sher.html"
+      "/posts/sher/sher.html",
+      "/posts/401/401.html"
     ]
   }
 ]
