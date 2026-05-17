@@ -426,26 +426,62 @@ a:hover {
 
 @media (max-width: 850px) {
   .navbar {
-    padding: 1.2rem 1rem !important;
+    padding: 0.85rem 0.85rem 0.6rem 0.85rem !important;
   }
 
   .navbar > .container-fluid {
     flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.65rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .navbar-brand {
-    font-size: 2.5rem !important;
+    font-size: clamp(1.55rem, 8vw, 2.25rem) !important;
+    line-height: 1 !important;
+    margin-right: 0 !important;
+    gap: 0.5rem !important;
+
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+
+    white-space: nowrap !important;
+    overflow: visible !important;
   }
 
   .navbar-brand img,
   .navbar-logo,
   img.navbar-logo {
-    height: 75px !important;
-    max-height: 75px !important;
+    height: clamp(42px, 13vw, 58px) !important;
+    max-height: 58px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .navbar-nav {
     flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+  }
+
+  .navbar-nav.me-auto,
+  .navbar-nav.ms-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .nav-link {
+    font-size: 0.86rem !important;
+    padding: 0.52rem 0.85rem !important;
+    min-width: auto !important;
+  }
+
+  .navbar-nav.ms-auto .nav-link {
+    min-width: auto !important;
   }
 
   main.content {
@@ -483,5 +519,24 @@ a:hover {
   .listing-description {
     font-size: 0.88rem !important;
     max-width: 95% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar-brand {
+    font-size: clamp(1.35rem, 7vw, 1.85rem) !important;
+    gap: 0.4rem !important;
+  }
+
+  .navbar-brand img,
+  .navbar-logo,
+  img.navbar-logo {
+    height: 42px !important;
+    max-height: 42px !important;
+  }
+
+  .nav-link {
+    font-size: 0.8rem !important;
+    padding: 0.48rem 0.72rem !important;
   }
 }
