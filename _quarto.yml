@@ -17,7 +17,7 @@ website:
       - text: Resume
         href: assets/resume.pdf
       - icon: linkedin
-        href: www.linkedin.com/in/tasnim-rida
+        href: https://www.linkedin.com/in/tasnim-rida
       - icon: envelope
         href: mailto:ridatasnim@gmail.com
 
