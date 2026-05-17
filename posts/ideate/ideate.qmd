@@ -1,5 +1,5 @@
 ---
-title: "Rabbit Tree Earring Holder"
+title: "Trinket Tree!"
 description: "A digitally fabricated jewelry holder designed to organize earrings while functioning as a decorative object."
 image: prof.png
 date: December 2024
@@ -556,7 +556,7 @@ a.anchorjs-link {
 <div class="poster-page">
 
   <header class="poster-header">
-    <h1>Rabbit Tree Earring Holder</h1>
+    <h1>Trinket Tree!</h1>
 
     <p>
       A digitally fabricated jewelry holder designed to organize earrings while functioning as a decorative object.

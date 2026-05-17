@@ -1,0 +1,542 @@
+---
+title: "Body Politics Infographic Project"
+description: "A pair of infographic designs exploring gender-based violence, media representation, environmental exposure, and public health awareness."
+image: coverpol.png
+date: December 2024
+page-layout: full
+
+format:
+  html:
+    theme: cosmo
+---
+
+```{=html}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --bg: #f4f4f4;
+  --black: #111;
+  --white: #ffffff;
+  --purple: #D85CDB;
+  --green: #b7ff91;
+  --soft-purple: #F7E8F8;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+  color: var(--black);
+}
+
+#quarto-content,
+#quarto-document-content,
+.page-columns,
+.content,
+main.content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+main.content {
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.quarto-title-block {
+  display: none !important;
+}
+
+/* ---------------- POSTER CANVAS ---------------- */
+
+.poster-page {
+  width: min(1250px, calc(100vw - 1rem));
+  min-height: auto;
+  margin: 1rem auto 0;
+  background: var(--bg);
+  padding: 3rem 2rem 1rem;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+}
+
+/* ---------------- HEADER ---------------- */
+
+.poster-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 4rem;
+}
+
+.poster-header h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.08;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.poster-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.18;
+  max-width: 660px;
+  margin: 0 auto 0.8rem;
+  color: var(--black);
+}
+
+.poster-date {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 1.6rem;
+  color: var(--black);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.nav-buttons a {
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.15rem;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 5px 5px 0 var(--green);
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.nav-buttons a:hover {
+  color: var(--black);
+  background: var(--green);
+  box-shadow: 5px 5px 0 var(--purple);
+  transform: translateY(-2px);
+}
+
+.nav-buttons i {
+  line-height: 1;
+}
+
+/* ---------------- PROJECT-STYLE CARDS ---------------- */
+
+.section-card,
+.infographic-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+.section-card {
+  position: relative;
+  padding: 3.8rem 2rem 2rem;
+  box-shadow: 10px 10px 0 var(--green);
+}
+
+.section-tag {
+  position: absolute;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--green);
+  border: 2px solid var(--black);
+  border-radius: 999px;
+
+  padding: 0.75rem 2rem;
+
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: none;
+  white-space: nowrap;
+  letter-spacing: 0;
+  color: var(--black);
+}
+
+.section-card p,
+.section-card li {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--black);
+}
+
+.section-card p {
+  margin: 0;
+}
+
+/* ---------------- OVERVIEW ---------------- */
+
+.overview-row {
+  width: min(980px, 100%);
+  margin: 0 auto 4.8rem;
+}
+
+.overview-card {
+  width: 100%;
+}
+
+/* ---------------- GALLERY HEADING ---------------- */
+
+.gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin: 0 auto 2.4rem auto;
+
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--black);
+}
+
+.gallery-heading img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------------- INFOGRAPHIC GRID ---------------- */
+
+.infographic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.2rem;
+  row-gap: 3rem;
+  align-items: stretch;
+  margin-bottom: 4.5rem;
+}
+
+.infographic-card {
+  padding: 1.45rem;
+  box-shadow: 10px 10px 0 var(--purple);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.infographic-header {
+  min-height: 205px;
+  margin-bottom: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.infographic-header h3 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+  color: var(--black);
+}
+
+.infographic-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.48;
+  margin: 0 0 1.1rem;
+  color: var(--black);
+}
+
+.pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  width: fit-content;
+  margin-top: auto;
+
+  color: var(--black) !important;
+  text-decoration: none;
+
+  border: 2px solid var(--black);
+  border-radius: 999px;
+
+  padding: 0.58rem 0.9rem;
+
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--green);
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.pdf-button:hover {
+  color: var(--black) !important;
+  background: var(--green);
+  box-shadow: 4px 4px 0 var(--purple);
+  transform: translateY(-2px);
+}
+
+.scroll-frame {
+  height: 900px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: 2px solid var(--black);
+  border-radius: 20px;
+
+  background: #eeeeee;
+}
+
+.scroll-frame iframe {
+  width: 100%;
+  height: 1600px;
+  border: 0;
+  display: block;
+}
+
+.scroll-note {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+  margin: 0.75rem 0 0 !important;
+  opacity: 0.75;
+  text-align: center;
+  color: var(--black);
+}
+
+/* ---------------- REFLECTION ---------------- */
+
+.reflection-row {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.reflection-card {
+  width: 100%;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 1000px) {
+  .infographic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infographic-header {
+    min-height: auto;
+  }
+
+  .scroll-frame {
+    height: 820px;
+  }
+
+  .scroll-frame iframe {
+    height: 1450px;
+  }
+}
+
+@media (max-width: 760px) {
+  .poster-page {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 1rem 1rem;
+    min-height: auto;
+  }
+
+  .poster-header {
+    margin-bottom: 3.6rem;
+  }
+
+  .nav-buttons {
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .overview-row {
+    margin-bottom: 4rem;
+  }
+
+  .section-card {
+    padding: 3.5rem 1.35rem 1.6rem;
+  }
+
+  .infographic-card {
+    padding: 1rem;
+    border-radius: 22px;
+    box-shadow: 7px 7px 0 var(--purple);
+  }
+
+  .gallery-heading {
+    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
+    font-weight: 400;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-heading img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .scroll-frame {
+    height: 700px;
+  }
+
+  .scroll-frame iframe {
+    height: 1250px;
+  }
+}
+
+@media (max-width: 560px) {
+  .poster-header h1 {
+    font-size: clamp(1.7rem, 8vw, 2.1rem);
+  }
+
+  .poster-header p {
+    font-size: 0.9rem;
+  }
+
+  .section-tag {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.4rem;
+  }
+
+  .scroll-frame {
+    height: 580px;
+  }
+
+  .scroll-frame iframe {
+    height: 1040px;
+  }
+}
+
+</style>
+
+<div class="poster-page">
+
+  <header class="poster-header">
+    <h1>Body Politics Infographic Project</h1>
+
+    <p>
+      A pair of infographic designs exploring gender-based violence, media representation, environmental exposure, and public health awareness.
+    </p>
+
+    <div class="poster-date">December 2024</div>
+
+    <nav class="nav-buttons">
+      <a href="infographic1.pdf" aria-label="Hidden in Plain Sight infographic" title="Hidden in Plain Sight" target="_blank">
+        <i class="bi bi-file-earmark-image"></i>
+      </a>
+
+      <a href="infographic2.pdf" aria-label="Environmental exposure infographic" title="What's in Your Environment?" target="_blank">
+        <i class="bi bi-file-earmark-image"></i>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="overview-row">
+      <div class="section-card overview-card">
+        <div class="section-tag">Project Overview</div>
+
+        <p>
+          For my Body Politics class, I created two awareness-based infographics about issues that are often present in everyday life but not always easy to identify. One piece examines gender-based violence through media examples and patterns of control, while the other focuses on environmental and consumer-product exposures linked to breast cancer risk.
+        </p>
+      </div>
+    </section>
+
+    <div class="gallery-heading">
+      <img src="../../assets/logo.png" alt="">
+      <span>The Infographics</span>
+      <img src="../../assets/logo.png" alt="">
+    </div>
+
+    <section class="infographic-grid">
+
+      <article class="infographic-card">
+        <div class="infographic-header">
+          <h3>Hidden in Plain Sight</h3>
+
+          <p>
+            This infographic examines gender-based violence through recognizable media examples, showing how control, manipulation, intimidation, and possessiveness can be framed as romance or family loyalty.
+          </p>
+
+          <a class="pdf-button" href="infographic1.pdf" target="_blank">
+            <i class="bi bi-box-arrow-up-right"></i>
+            Open full PDF
+          </a>
+        </div>
+
+        <div class="scroll-frame">
+          <iframe src="infographic1.pdf"></iframe>
+        </div>
+
+        <p class="scroll-note">Scroll inside the frame to view the full infographic.</p>
+      </article>
+
+      <article class="infographic-card">
+        <div class="infographic-header">
+          <h3>What’s in Your Environment?</h3>
+
+          <p>
+            This infographic focuses on the hidden environmental and consumer-product exposures linked to breast cancer risk, including pesticides, personal products, nonstick cookware, rBGH, and air pollution.
+          </p>
+
+          <a class="pdf-button" href="infographic2.pdf" target="_blank">
+            <i class="bi bi-box-arrow-up-right"></i>
+            Open full PDF
+          </a>
+        </div>
+
+        <div class="scroll-frame">
+          <iframe src="infographic2.pdf"></iframe>
+        </div>
+
+        <p class="scroll-note">Scroll inside the frame to view the full infographic.</p>
+      </article>
+
+    </section>
+
+    <section class="reflection-row">
+      <div class="section-card reflection-card">
+        <div class="section-tag">Design Reflection</div>
+
+        <p>
+         With both infographics, my goal was to create eye-catching visuals that bring attention to important issues that are more common than people may realize. I used bright colors, clear sectioning, and familiar examples to draw readers in and make dense information feel more approachable.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+```
