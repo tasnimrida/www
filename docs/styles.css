@@ -18,8 +18,12 @@ body {
 /* NAVBAR */
 
 .navbar {
-  background: transparent !important;
+  background: var(--bg) !important;
   padding: 1.5rem 2rem 1rem 2rem !important;
+
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
 }
 
 .navbar > .container-fluid {
