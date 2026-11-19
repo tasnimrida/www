@@ -296,6 +296,7 @@ a.anchorjs-link {
   height: 315px;
   background: var(--soft-purple);
   overflow: hidden;
+  position: relative;
 }
 
 .stl-viewer canvas {
@@ -325,6 +326,7 @@ a.anchorjs-link {
   box-shadow: none;
   pointer-events: none;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .step-text {
@@ -392,7 +394,7 @@ a.anchorjs-link {
 
 .strip-step h3 {
   font-family: "Fraunces", serif;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 0.4rem;
@@ -401,8 +403,8 @@ a.anchorjs-link {
 
 .strip-step p {
   font-family: "Inter", sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.42;
+  font-size: 0.92rem;
+  line-height: 1.45;
   margin: 0;
   color: var(--black);
 }
@@ -656,113 +658,175 @@ a.anchorjs-link {
 </script>
 
 <script type="module">
-  import * as THREE from "three";
-  import { STLLoader } from "three/addons/loaders/STLLoader.js";
-  import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import * as THREE from "three";
+import { STLLoader } from "three/addons/loaders/STLLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-  const container = document.getElementById("stl-viewer");
+const container = document.getElementById("stl-viewer");
 
-  if (container) {
+if (container) {
 
-    function initializeViewer() {
+  function initializeViewer() {
 
-      if (!container.clientWidth || !container.clientHeight) {
-        requestAnimationFrame(initializeViewer);
-        return;
-      }
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
-      const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xF2D5F3);
-
-      const camera = new THREE.PerspectiveCamera(
-        45,
-        container.clientWidth / container.clientHeight,
-        0.1,
-        1000
-      );
-
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(window.devicePixelRatio);
-      container.appendChild(renderer.domElement);
-
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
-      scene.add(ambientLight);
-
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
-      directionalLight.position.set(4, 5, 6);
-      scene.add(directionalLight);
-
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 1.3;
-
-      const loader = new STLLoader();
-
-      loader.load(
-        "final%20project%20v0.stl",
-
-        function (geometry) {
-          geometry.computeVertexNormals();
-          geometry.computeBoundingBox();
-
-          const material = new THREE.MeshStandardMaterial({
-            color: 0xD85CDB,
-            roughness: 0.45,
-            metalness: 0.05
-          });
-
-          const mesh = new THREE.Mesh(geometry, material);
-
-          const boundingBox = geometry.boundingBox;
-          const center = new THREE.Vector3();
-          boundingBox.getCenter(center);
-
-          mesh.geometry.translate(-center.x, -center.y, -center.z);
-
-          const size = new THREE.Vector3();
-          boundingBox.getSize(size);
-
-          const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 5 / maxDim;
-
-          mesh.scale.set(scale, scale, scale);
-          mesh.rotation.x = -Math.PI / 2;
-
-          scene.add(mesh);
-
-          camera.position.set(0, 2.3, 7);
-          controls.target.set(0, 0, 0);
-          controls.update();
-
-          animate();
-        },
-
-        undefined,
-
-        function (error) {
-          container.innerHTML =
-            "<p style='font-family: Inter, sans-serif; padding: 1rem;'>The STL viewer could not load. Make sure the file is named exactly <strong>final project v0.stl</strong> and is in the same folder as this page.</p>";
-
-          console.error(error);
-        }
-      );
-
-      function animate() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-      }
-
-      window.addEventListener("resize", function () {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
+    if (!width || !height) {
+      requestAnimationFrame(initializeViewer);
+      return;
     }
 
-    initializeViewer();
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color("#F2D5F3");
+
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      width / height,
+      0.1,
+      1000
+    );
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true
+    });
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(width, height);
+    container.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 1.6));
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
+    directionalLight.position.set(4, 5, 6);
+    scene.add(directionalLight);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1.3;
+    controls.enableZoom = true;
+
+    const loader = new STLLoader();
+
+    // Load the STL from the same directory as the generated HTML page.
+    const stlURL = new URL(
+      "final project v0.stl",
+      window.location.href
+    ).href;
+
+    loader.load(
+
+      stlURL,
+
+      function (geometry) {
+
+        geometry.computeVertexNormals();
+        geometry.computeBoundingBox();
+
+        const material = new THREE.MeshStandardMaterial({
+          color: 0xD85CDB,
+          roughness: 0.45,
+          metalness: 0.05
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+
+        // Center the geometry before scaling.
+        geometry.center();
+
+        const box = new THREE.Box3().setFromBufferAttribute(
+          geometry.attributes.position
+        );
+
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+
+        if (!Number.isFinite(maxDim) || maxDim === 0) {
+          throw new Error("The STL file has invalid dimensions.");
+        }
+
+        const scale = 4.5 / maxDim;
+        mesh.scale.setScalar(scale);
+
+        // Rotate the model upright.
+        mesh.rotation.x = -Math.PI / 2;
+
+        scene.add(mesh);
+
+        // Position the camera based on the model dimensions.
+        const scaledSize = size.clone().multiplyScalar(scale);
+        const maxScaledDim = Math.max(
+          scaledSize.x,
+          scaledSize.y,
+          scaledSize.z
+        );
+
+        const distance = maxScaledDim * 1.8;
+
+        camera.position.set(
+          0,
+          distance * 0.35,
+          distance
+        );
+
+        camera.lookAt(0, 0, 0);
+
+        controls.target.set(0, 0, 0);
+        controls.update();
+
+        function animate() {
+          requestAnimationFrame(animate);
+          controls.update();
+          renderer.render(scene, camera);
+        }
+
+        animate();
+
+      },
+
+      undefined,
+
+      function (error) {
+
+        console.error("STL loading error:", stlURL, error);
+
+        container.innerHTML = `
+          <p style="
+            font-family: Inter, sans-serif;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+          ">
+            The 3D model could not load.
+            Please check that <strong>final project v0.stl</strong>
+            is included in the published website files.
+          </p>
+        `;
+
+      }
+
+    );
+
+    // Resize viewer when the browser window changes.
+    window.addEventListener("resize", function () {
+
+      const newWidth = container.clientWidth;
+      const newHeight = container.clientHeight;
+
+      if (!newWidth || !newHeight) return;
+
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(newWidth, newHeight);
+
+    });
+
   }
+
+  initializeViewer();
+
+}
 </script>
 ```
