@@ -162,7 +162,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
 <style>
@@ -173,7 +172,8 @@ ul.task-list li input[type="checkbox"] {
   --white: #ffffff;
   --purple: #D85CDB;
   --green: #b7ff91;
-  --soft-purple: #F7E8F8;
+  --soft-green: #eaffde;
+  --soft-purple: #F2D5F3;
 }
 
 html,
@@ -207,7 +207,6 @@ main.content {
   display: none !important;
 }
 
-/* Hide Quarto heading link icons */
 .anchorjs-link,
 .header-anchor,
 a.anchorjs-link {
@@ -232,7 +231,7 @@ a.anchorjs-link {
 .poster-header {
   text-align: center;
   max-width: 860px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3.5rem;
 }
 
 .poster-header h1 {
@@ -265,54 +264,53 @@ a.anchorjs-link {
 
 .poster-grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  column-gap: 3rem;
-  row-gap: 4rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.5rem;
+  row-gap: 4.5rem;
   align-items: center;
 }
 
-/* ---------------- PROJECT-STYLE CARDS ---------------- */
+/* ---------------- MINIMAL TEXT SECTIONS ---------------- */
 
 .section-card,
-.image-panel,
 .process-card-big {
-  background: var(--white);
-  border: 2px solid var(--black);
-  border-radius: 30px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
   box-sizing: border-box;
   color: var(--black);
 }
 
-.section-card {
-  position: relative;
-  min-height: auto;
-  padding: 3.8rem 2rem 2rem;
-  box-shadow: 10px 10px 0 var(--green);
-}
-
-.section-card.large {
-  min-height: auto;
-}
-
-.section-tag {
-  position: absolute;
-  top: -1.45rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: var(--green);
-  border: 2px solid var(--black);
-  border-radius: 999px;
-
-  padding: 0.75rem 2rem;
-
+.section-heading {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 100%;
+  margin: 0 auto 1.25rem;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  background-image: none !important;
   font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: none;
-  white-space: nowrap;
-  letter-spacing: 0;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1;
   color: var(--black);
+  text-align: center;
+}
+
+.section-heading img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .section-card p,
@@ -327,108 +325,48 @@ a.anchorjs-link {
   margin: 0;
 }
 
-/* ---------------- FLOWER TEXT DIVIDERS ---------------- */
+/* ---------------- INLINE TEXT + PHOTO ROWS ---------------- */
 
-.flower-divider {
-  text-align: center;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 0.5rem;
-}
-
-.flower-divider-heading {
-  display: flex;
+.inline-feature-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0;
   align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  margin-bottom: 0.75rem;
-}
-
-.flower-divider-heading img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  display: block;
-}
-
-.flower-divider-heading h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
-  font-weight: 400;
-  line-height: 1;
-  margin: 0;
-  padding: 0 !important;
-  color: var(--black);
-
-  border-bottom: none !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-  background-image: none !important;
-}
-
-.flower-divider p {
-  font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  max-width: 560px;
-  margin: 0 auto;
-  color: var(--black);
-}
-
-/* ---------------- OVERVIEW + DESIGN GOAL STACK ---------------- */
-
-.overview-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 4.4rem;
-  align-self: center;
-}
-
-.overview-card {
-  padding-bottom: 2rem;
-}
-
-/* ---------------- IMAGE CARDS ---------------- */
-
-.image-panel {
-  padding: 0.9rem;
-  box-shadow: 8px 8px 0 var(--purple);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-panel img {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.text-block {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0.5rem 0 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.inline-photo-unboxed {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 340px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  overflow: visible;
+  box-sizing: border-box;
+  transform: translateX(-35px);
+}
+
+.inline-photo-unboxed img {
+  width: 110%;
+  height: 100%;
+  max-width: none;
   display: block;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-.hero-panel img,
-.in-use-panel img {
+  border-radius: 14px;
   object-fit: contain;
-}
-
-.hero-panel {
-  margin-top: 0;
-  align-self: center;
-  justify-self: center;
-  width: 78%;
-}
-
-.in-use-panel {
-  margin-top: 0;
-  align-self: center;
-  justify-self: center;
-  width: 92%;
-  overflow: hidden;
-}
-
-.in-use-panel img {
-  transform: translateX(-3%);
 }
 
 /* ---------------- PROCESS SECTION ---------------- */
@@ -442,7 +380,7 @@ a.anchorjs-link {
 }
 
 .process-section {
-  width: 92%;
+  width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -450,14 +388,13 @@ a.anchorjs-link {
 
 .process-card-big {
   position: relative;
-  padding: 3.8rem 1.5rem 1.8rem;
-  box-shadow: 10px 10px 0 var(--green);
+  padding: 0.5rem 0 0;
 }
 
 .process-step-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .process-step-card {
@@ -467,25 +404,28 @@ a.anchorjs-link {
   box-shadow: none;
   padding: 0;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.9rem;
 }
 
-.step-media {
+.step-media-green {
   width: 100%;
+  height: 315px;
   border: 2px solid var(--black);
   border-radius: 18px;
   background: var(--soft-purple);
   overflow: hidden;
   box-sizing: border-box;
-  box-shadow: 6px 6px 0 var(--purple);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.step-media img {
+.step-media-green img {
   width: 100%;
-  height: 315px;
+  height: 100%;
   object-fit: contain;
   display: block;
   border-radius: 16px;
@@ -502,6 +442,12 @@ a.anchorjs-link {
   overflow: hidden;
 }
 
+.stl-viewer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .stl-media {
   position: relative;
 }
@@ -511,40 +457,36 @@ a.anchorjs-link {
   left: 50%;
   bottom: 0.75rem;
   transform: translateX(-50%);
-
   background: var(--white);
   border: 2px solid var(--black);
   border-radius: 999px;
-  padding: 0.38rem 0.8rem;
-
+  padding: 0.38rem 0.85rem;
   font-family: "Inter", sans-serif;
   font-size: 0.78rem;
+  font-weight: 600;
   line-height: 1;
   color: var(--black);
-
-  box-shadow: 4px 4px 0 var(--green);
+  box-shadow: none;
   pointer-events: none;
   white-space: nowrap;
 }
 
 .step-text {
-  padding: 0.35rem 0.25rem 0;
+  padding: 0.25rem 0.2rem 0;
 }
 
-.step-label {
+.step-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-
+  justify-content: center;
   margin-bottom: 0.45rem;
-  padding: 0.38rem 0.75rem;
-
+  padding: 0.32rem 0.75rem;
+  background: var(--green);
   border: 2px solid var(--black);
   border-radius: 999px;
-  background: var(--green);
-
+  box-shadow: none;
   font-family: "Fraunces", serif;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   line-height: 1;
   color: var(--black);
@@ -554,24 +496,24 @@ a.anchorjs-link {
   font-family: "Fraunces", serif;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.1;
-  margin: 0 0 0.45rem;
+  line-height: 1.15;
+  margin: 0 0 0.4rem;
   color: var(--black);
 }
 
 .step-text p {
   font-family: "Inter", sans-serif;
   font-size: 0.92rem;
-  line-height: 1.42;
+  line-height: 1.45;
   margin: 0;
   color: var(--black);
 }
 
-/* clean timeline strip — no boxes */
+/* ---------------- TIMELINE ---------------- */
 
 .process-strip {
   grid-column: 1 / -1;
-  padding: 1.2rem 0.3rem 0.2rem;
+  padding: 0.8rem 0.2rem 0.2rem;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -580,60 +522,53 @@ a.anchorjs-link {
 .process-strip-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 1.6rem;
   align-items: start;
 }
 
 .strip-step {
   position: relative;
-  padding: 0.35rem 1.35rem 0;
+  padding: 0.25rem 0 0;
   background: transparent;
   border: none;
   box-shadow: none;
 }
 
-.strip-step:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -0.25rem;
-  top: 0.6rem;
-
-  font-family: "Fraunces", serif;
-  font-size: 1.45rem;
-  color: var(--black);
-}
-
 .strip-step h3 {
   font-family: "Fraunces", serif;
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  line-height: 1.1;
-  margin: 0 0 0.45rem;
+  line-height: 1.15;
+  margin: 0 0 0.4rem;
   color: var(--black);
 }
 
 .strip-step p {
   font-family: "Inter", sans-serif;
-  font-size: 0.86rem;
-  line-height: 1.38;
+  font-size: 0.88rem;
+  line-height: 1.42;
   margin: 0;
   color: var(--black);
 }
 
-/* ---------------- FINAL + REFLECTION SECTION ---------------- */
+/* ---------------- REFLECTION ---------------- */
 
-.final-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 3.6rem;
-  align-self: center;
+.reflection-row {
+  margin-bottom: 1.5rem;
 }
 
-.reflection-text {
-  max-width: 620px;
-}
+/* ---------------- RESPONSIVE ---------------- */
 
-/* ---------------- MOBILE ---------------- */
+@media (max-width: 1000px) {
+  .inline-feature-row {
+    grid-template-columns: 1.05fr 0.95fr;
+    max-width: 900px;
+  }
+
+  .inline-photo-unboxed {
+    transform: translateX(-20px);
+  }
+}
 
 @media (max-width: 760px) {
   .poster-page {
@@ -647,81 +582,57 @@ a.anchorjs-link {
   .process-step-grid,
   .process-strip-inner {
     grid-template-columns: 1fr;
-    row-gap: 3rem;
+    row-gap: 2.2rem;
   }
 
   .poster-header {
     margin-bottom: 2.5rem;
   }
 
-  .hero-panel,
-  .in-use-panel,
-  .process-section {
+  .inline-feature-row {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+
+  .text-block,
+  .inline-photo-unboxed {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .inline-photo-unboxed {
+    height: 280px;
+    justify-content: center;
+    transform: none;
+    overflow: hidden;
+  }
+
+  .inline-photo-unboxed img {
     width: 100%;
   }
 
-  .overview-stack,
-  .final-stack {
-    gap: 3.2rem;
-  }
-
-  .section-card,
-  .section-card.large {
-    min-height: auto;
-  }
-
-  .section-card {
-    padding: 3.5rem 1.35rem 1.6rem;
-  }
-
-  .image-panel {
-    padding: 0.75rem;
-  }
-
-  .flower-divider {
-    margin-top: 0;
-  }
-
-  .flower-divider-heading {
+  .section-heading {
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
     gap: 0.65rem;
   }
 
-  .flower-divider-heading img {
-    width: 28px;
-    height: 28px;
+  .section-heading img {
+    width: 26px;
+    height: 26px;
   }
 
-  .flower-divider-heading h2 {
-    font-size: clamp(1.45rem, 8vw, 2rem);
-  }
-
-  .process-card-big {
-    padding: 3.5rem 1rem 1rem;
-  }
-
-  .step-media img,
+  .step-media-green,
   .stl-viewer {
     height: 310px;
   }
 
-  .strip-step {
-    padding: 0;
-  }
-
-  .strip-step:not(:last-child)::after {
-    content: "";
-  }
-
   .process-strip {
-    padding-top: 0.4rem;
+    padding-top: 0.5rem;
   }
 
   .process-strip-inner {
-    gap: 1.2rem;
-  }
-
-  .in-use-panel img {
-    transform: translateX(0);
+    gap: 1.3rem;
   }
 }
 
@@ -741,44 +652,45 @@ a.anchorjs-link {
 
   <main class="poster-grid">
 
-    <div class="overview-stack">
+    <section class="inline-feature-row">
 
-      <section class="section-card overview-card">
-        <div class="section-tag">Project Overview</div>
+      <div class="section-card text-block">
+
+        <h2 class="section-heading anchored">
+          <img src="../../assets/logo.png" alt="">
+          <span>Design Goal</span>
+          <img src="../../assets/logo.png" alt="">
+        </h2>
 
         <p>
-          For my DigiTool final project, I designed and fabricated an earring holder inspired by a stylized tree form. The branches create space for hanging earrings, while the circular base and rabbit dish provide a place for rings and smaller jewelry.
+          For my DigiTool final project, I designed and fabricated a tree-shaped earring holder to keep bulky jewelry visible and easy to access rather than stored away in boxes. The branches hold hanging earrings, while the circular base and rabbit dish provide a place for rings, necklaces, bracelets, and smaller pieces.
         </p>
-      </section>
 
-      <section class="flower-divider">
-        <div class="flower-divider-heading">
-          <img src="../../assets/logo.png" alt="">
-          <h2 class="anchored">Design Goal</h2>
-          <img src="../../assets/logo.png" alt="">
-        </div>
+      </div>
 
-        <p>
-          Design a display where lots of bulky jewelry can stay visible and easy to access, making it more likely to be used than jewelry stored away in boxes.
-        </p>
-      </section>
+      <div class="inline-photo-unboxed">
+        <img src="prof.png" alt="Final rabbit tree earring holder photographed on a black circular base">
+      </div>
 
-    </div>
-
-    <section class="image-panel hero-panel">
-      <img src="prof.png" alt="Final rabbit tree earring holder photographed on a black circular base">
     </section>
 
     <section class="process-row">
+
       <div class="process-section">
 
+        <h2 class="section-heading anchored">
+          <img src="../../assets/logo.png" alt="">
+          <span>Making Process</span>
+          <img src="../../assets/logo.png" alt="">
+        </h2>
+
         <div class="process-card-big">
-          <div class="section-tag">Making Process</div>
 
           <div class="process-step-grid">
 
             <div class="process-step-card">
-              <div class="step-media stl-media">
+
+              <div class="step-media-green stl-media">
                 <div id="stl-viewer" class="stl-viewer"></div>
 
                 <div class="stl-note">
@@ -787,41 +699,45 @@ a.anchorjs-link {
               </div>
 
               <div class="step-text">
-                <div class="step-label">01</div>
+                <span class="step-pill">01</span>
                 <h3 class="anchored">Draw + Model</h3>
                 <p>
                   I started by drawing the tree outline, then recreated and refined the full design in Fusion 360.
                 </p>
               </div>
+
             </div>
 
             <div class="process-step-card">
-              <div class="step-media">
+
+              <div class="step-media-green">
                 <img class="cardboard-img" src="cardboard.png" alt="Cardboard prototype of the tree-shaped earring holder">
               </div>
 
               <div class="step-text">
-                <div class="step-label">02</div>
+                <span class="step-pill">02</span>
                 <h3 class="anchored">Cardboard Prototype</h3>
                 <p>
                   Using the Fusion 360 model, I laser cut a cardboard version first to test the shape, scale, and structure.
                 </p>
               </div>
+
             </div>
 
             <div class="process-strip">
+
               <div class="process-strip-inner">
 
                 <div class="strip-step">
-                  <div class="step-label">03</div>
+                  <span class="step-pill">03</span>
                   <h3 class="anchored">Laser Cut + Engrave</h3>
                   <p>
-                    After testing the prototype, I laser cut the final tree and base and engraved the base.
+                    After testing the prototype, I laser cut the final tree and base. I also added some engravings to the base.
                   </p>
                 </div>
 
                 <div class="strip-step">
-                  <div class="step-label">04</div>
+                  <span class="step-pill">04</span>
                   <h3 class="anchored">3D Print</h3>
                   <p>
                     I 3D printed the rabbit ring holder from Thingiverse, an open-source 3D design repository.
@@ -829,48 +745,46 @@ a.anchorjs-link {
                 </div>
 
                 <div class="strip-step">
-                  <div class="step-label">05</div>
+                  <span class="step-pill">05</span>
                   <h3 class="anchored">Assemble</h3>
                   <p>
-                    I combined the laser-cut tree, engraved base, and printed rabbit holder into the final object.
+                    I attached the laser-cut tree, engraved base, and printed rabbit holder together to create the final object.
                   </p>
                 </div>
 
               </div>
+
             </div>
 
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <section class="image-panel in-use-panel">
-      <img src="inuse.png" alt="Rabbit tree earring holder being used with earrings hanging from the branches">
-    </section>
+    <section class="inline-feature-row reflection-row">
 
-    <div class="final-stack">
+      <div class="section-card text-block">
 
-      <section class="section-card large">
-        <div class="section-tag">Final Use</div>
-        <p>
-          The finished piece holds earrings across the tree branches, with the holes allowing different earring styles to hang at varying heights. The rabbit dish adds a second jewelry-storage area while giving the object a more personal and whimsical identity.
-        </p>
-      </section>
-
-      <section class="flower-divider reflection-text">
-        <div class="flower-divider-heading">
+        <h2 class="section-heading anchored">
           <img src="../../assets/logo.png" alt="">
-          <h2 class="anchored">Reflection</h2>
+          <span>Reflection</span>
           <img src="../../assets/logo.png" alt="">
-        </div>
+        </h2>
 
         <p>
           This project helped me think through the relationship between digital design, physical fabrication, and everyday use. Small choices like hole placement, branch spacing, material thickness, and scale directly affected whether the object worked well once fabricated.
         </p>
-      </section>
 
-    </div>
+      </div>
+
+      <div class="inline-photo-unboxed">
+        <img src="inuse.png" alt="Rabbit tree earring holder being used with earrings hanging from the branches">
+      </div>
+
+    </section>
 
   </main>
 
@@ -893,89 +807,106 @@ a.anchorjs-link {
   const container = document.getElementById("stl-viewer");
 
   if (container) {
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xF7E8F8);
 
-    const camera = new THREE.PerspectiveCamera(
-      45,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
+    function initializeViewer() {
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
-    directionalLight.position.set(4, 5, 6);
-    scene.add(directionalLight);
-
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 1.3;
-
-    const loader = new STLLoader();
-
-    loader.load(
-      "final%20project%20v0.stl",
-      function (geometry) {
-        geometry.computeVertexNormals();
-        geometry.computeBoundingBox();
-
-        const material = new THREE.MeshStandardMaterial({
-          color: 0xD85CDB,
-          roughness: 0.45,
-          metalness: 0.05
-        });
-
-        const mesh = new THREE.Mesh(geometry, material);
-
-        const boundingBox = geometry.boundingBox;
-        const center = new THREE.Vector3();
-        boundingBox.getCenter(center);
-        mesh.geometry.translate(-center.x, -center.y, -center.z);
-
-        const size = new THREE.Vector3();
-        boundingBox.getSize(size);
-        const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 5 / maxDim;
-        mesh.scale.set(scale, scale, scale);
-
-        mesh.rotation.x = -Math.PI / 2;
-
-        scene.add(mesh);
-
-        camera.position.set(0, 2.3, 7);
-        controls.target.set(0, 0, 0);
-        controls.update();
-
-        animate();
-      },
-      undefined,
-      function (error) {
-        container.innerHTML =
-          "<p style='font-family: Inter, sans-serif; padding: 1rem;'>The STL viewer could not load. Make sure the file is named exactly <strong>final project v0.stl</strong> and is in the same folder as this page.</p>";
-        console.error(error);
+      if (!container.clientWidth || !container.clientHeight) {
+        requestAnimationFrame(initializeViewer);
+        return;
       }
-    );
 
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xF2D5F3);
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      container.appendChild(renderer.domElement);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      directionalLight.position.set(4, 5, 6);
+      scene.add(directionalLight);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 1.3;
+
+      const loader = new STLLoader();
+
+      loader.load(
+        "final%20project%20v0.stl",
+
+        function (geometry) {
+          geometry.computeVertexNormals();
+          geometry.computeBoundingBox();
+
+          const material = new THREE.MeshStandardMaterial({
+            color: 0xD85CDB,
+            roughness: 0.45,
+            metalness: 0.05
+          });
+
+          const mesh = new THREE.Mesh(geometry, material);
+
+          const boundingBox = geometry.boundingBox;
+          const center = new THREE.Vector3();
+          boundingBox.getCenter(center);
+
+          mesh.geometry.translate(-center.x, -center.y, -center.z);
+
+          const size = new THREE.Vector3();
+          boundingBox.getSize(size);
+
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 5 / maxDim;
+
+          mesh.scale.set(scale, scale, scale);
+          mesh.rotation.x = -Math.PI / 2;
+
+          scene.add(mesh);
+
+          camera.position.set(0, 2.3, 7);
+          controls.target.set(0, 0, 0);
+          controls.update();
+
+          animate();
+        },
+
+        undefined,
+
+        function (error) {
+          container.innerHTML =
+            "<p style='font-family: Inter, sans-serif; padding: 1rem;'>The STL viewer could not load. Make sure the file is named exactly <strong>final project v0.stl</strong> and is in the same folder as this page.</p>";
+
+          console.error(error);
+        }
+      );
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      window.addEventListener("resize", function () {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
     }
 
-    window.addEventListener("resize", function () {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    });
+    initializeViewer();
   }
 </script>
 
