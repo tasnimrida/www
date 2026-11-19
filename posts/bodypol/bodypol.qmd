@@ -410,12 +410,12 @@ main.content {
       <div class="section-card reflection-card">
         <h2 class="section-heading">
           <img src="../../assets/logo.png" alt="">
-          <span>Design Reflection</span>
+          <span>Design Goal</span>
           <img src="../../assets/logo.png" alt="">
         </h2>
 
         <p>
-          With both pieces, my goal was to create eye-catching visuals that bring attention to important issues that are more common than people may realize. I used bright colors, clear sectioning, and familiar examples to draw readers in and make dense information feel more approachable.
+          With both pieces, I wanted to create eye-catching visuals that bring attention to important issues that are more common than people may realize. I used bright colors, clear sectioning, and familiar examples to draw readers in and make dense information feel more approachable.
         </p>
       </div>
     </section>
