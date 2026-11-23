@@ -1,13 +1,14 @@
 ---
 title: "Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups"
 description: "A statistical investigation of county-level predictors of health disparities, utilizing Gradient Boosted Trees and regression to identify key social determinants of health."
-image: plot1.png
+image: plot1.jpeg
 date: August 2024
 page-layout: full
 
 format:
   html:
     theme: cosmo
+    anchor-sections: false
 ---
 
 ```{=html}
@@ -63,7 +64,7 @@ main.content {
   min-height: auto;
   margin: 1rem auto 0;
   background: var(--bg);
-  padding: 3rem 2rem 1rem;
+  padding: 3rem 2rem 2rem;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color: var(--black);
@@ -74,7 +75,7 @@ main.content {
 .poster-header {
   text-align: center;
   max-width: 860px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 4.5rem;
 }
 
 .poster-header h1 {
@@ -90,7 +91,7 @@ main.content {
 .poster-header p {
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  line-height: 1.18;
+  line-height: 1.45;
   max-width: 660px;
   margin: 0 auto 0.8rem;
   color: var(--black);
@@ -116,16 +117,13 @@ main.content {
   font-size: 1.15rem;
   width: 2.8rem;
   height: 2.8rem;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border: 2px solid var(--black);
   border-radius: 999px;
   background: var(--white);
   box-shadow: 5px 5px 0 var(--green);
-
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
@@ -140,222 +138,225 @@ main.content {
   line-height: 1;
 }
 
-/* ---------------- MAIN LAYOUT ---------------- */
+/* ---------------- FLOWER HEADINGS ---------------- */
 
-.poster-grid {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  column-gap: 3rem;
-  row-gap: 4rem;
+.section-heading {
+  display: flex;
   align-items: center;
-}
-
-.intro-copy {
-  align-self: center;
-}
-
-/* same size + weight as Sher page question */
-.question {
-  position: relative;
+  justify-content: flex-start;
+  gap: 0.85rem;
   font-family: "Fraunces", serif;
   font-size: clamp(1.5rem, 2.55vw, 2.25rem);
-  line-height: 1.08;
+  line-height: 1.1;
   font-weight: 400;
-  max-width: 560px;
-  margin: 0 auto 2.9rem auto;
-  text-align: center;
   color: var(--black);
+  margin: 0 0 1.7rem;
+  margin-top: 0 !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-/* ---------------- PROJECT-STYLE CARDS ---------------- */
-
-.section-card,
-.image-panel,
-.presentation-combined-card {
-  background: var(--white);
-  border: 2px solid var(--black);
-  border-radius: 30px;
-  box-sizing: border-box;
-  color: var(--black);
+.section-heading img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-/* content / work cards = green shadow */
-.section-card {
+.section-heading.centered {
+  justify-content: center;
+}
+
+/* no hover anchor links on headings */
+.anchorjs-link,
+.section-heading .anchorjs-link,
+.section-heading a {
+  display: none !important;
+}
+
+/* ---------------- RESEARCH QUESTION ---------------- */
+
+.research-question {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.question-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  min-width: 0;
+}
+
+/* wrapper is exactly as wide as the heading (flower to flower),
+   so the question text centers under the heading */
+.question-block {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* heading: title centered, flowers pinned to the left/right edges,
+   so the box is perfectly symmetric around the title */
+.question-block .section-heading {
+  display: block;
   position: relative;
-  min-height: auto;
-  padding: 3.8rem 2rem 2rem;
-  box-shadow: 10px 10px 0 var(--green);
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: calc(32px + 0.85rem);
+  padding-right: calc(32px + 0.85rem);
+  box-sizing: border-box;
 }
 
-.section-card.large {
-  min-height: auto;
-}
-
-.section-tag {
-  position: absolute;
-  top: -1.45rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: var(--green);
-  border: 2px solid var(--black);
-  border-radius: 999px;
-
-  padding: 0.75rem 2rem;
-
-  font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: none;
+.question-block .section-heading span {
   white-space: nowrap;
-  letter-spacing: 0;
-  color: var(--black);
 }
 
-.section-card p,
-.section-card li {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--black);
+.question-block .section-heading img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.section-card p {
+.question-block .section-heading img:first-of-type {
+  left: 0;
+}
+
+.question-block .section-heading img:last-of-type {
+  right: 0;
+}
+
+/* hide anything else the theme may inject into the heading */
+.question-block .section-heading > :not(img):not(span),
+.question-block .section-heading::before,
+.question-block .section-heading::after {
+  display: none !important;
+}
+
+.question-block .question-text {
+  width: 0;
+  min-width: 100%;
+  text-align: center;
+}
+
+.question-text {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+  line-height: 1.25;
+  font-weight: 400;
+  color: var(--black);
   margin: 0;
+  width: 100%;
+  text-align: center;
 }
 
-.section-card ul {
-  padding-left: 1.2rem;
-  margin: 1rem 0 0;
-}
-
-.section-card li {
-  margin-bottom: 0.65rem;
-}
-
-/* ---------------- IMAGE / GRAPH CARDS ---------------- */
-
-.image-panel {
-  padding: 1.65rem;
-  box-shadow: 10px 10px 0 var(--purple);
-
+.map-panel {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.image-panel img {
+.map-panel img {
   width: 100%;
+  height: auto;
   display: block;
-  border-radius: 16px;
   object-fit: contain;
-}
-
-.map-panel {
-  margin-top: 0;
-  align-self: center;
-  justify-self: center;
-  width: 92%;
-}
-
-.scatter-panel {
-  margin-top: 0;
-  align-self: center;
-  justify-self: center;
-  width: 106%;
+  border-radius: 20px;
 }
 
 /* ---------------- METHODOLOGY ---------------- */
 
-.methodology-card {
-  align-self: center;
-  justify-self: center;
-  width: 88%;
-  padding-top: 3.8rem;
-  padding-bottom: 2.15rem;
-  box-shadow: 10px 10px 0 var(--green);
+.methodology-section {
+  width: 100%;
+  margin: 0 auto 6rem;
+}
+
+.methodology-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.methodology-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--black);
+}
+
+.methodology-text p {
+  margin: 0 0 1.2rem;
+}
+
+.methodology-text ul {
+  padding-left: 1.3rem;
+  margin: 0 0 1.2rem;
+}
+
+.methodology-text li {
+  margin-bottom: 0.7rem;
+}
+
+.methodology-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.methodology-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 /* ---------------- KEY FINDINGS ---------------- */
 
-.key-findings-row {
-  grid-column: 1 / -1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
 .key-findings-section {
-  width: 82%;
-  max-width: 920px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.key-findings-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  margin: 0 auto 2rem auto;
-
-  font-family: "Fraunces", serif;
-  font-size: clamp(1.5rem, 2.55vw, 2.25rem);
-  font-weight: 400;
-  line-height: 1;
-  color: var(--black);
-}
-
-.key-findings-heading img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  display: block;
-}
-
-.key-finding-card {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 1.1rem;
-  align-items: center;
-
   width: 100%;
-  margin: 0 auto 1.35rem auto;
-
-  background: var(--white);
-  border: 2px solid var(--black);
-  border-radius: 18px;
-
-  padding: 1.25rem 1.6rem;
-  box-sizing: border-box;
-
-  box-shadow: 7px 7px 0 var(--green);
-
-  font-family: "Inter", sans-serif;
-  color: var(--black);
+  margin: 0 auto 6rem;
 }
 
-.key-finding-card:last-child {
-  margin-bottom: 0;
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.finding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .key-finding-icon {
-  width: 58px;
-  height: 58px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
-
   background: #efffe8;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .key-finding-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 43px;
+  height: 43px;
   stroke: var(--black);
   stroke-width: 2.3;
   fill: none;
@@ -369,80 +370,69 @@ main.content {
 }
 
 .key-finding-label {
-  margin: 0 0 0.35rem 0;
-
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.15;
+  font-family: "Fraunces", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 0.8rem;
   color: var(--black);
-
-  text-decoration: none;
-  pointer-events: none;
 }
 
 .key-finding-text p {
-  margin: 0;
-
   font-family: "Inter", sans-serif;
-  font-size: 0.86rem;
-  line-height: 1.42;
+  font-size: 0.9rem;
+  line-height: 1.55;
   color: var(--black);
+  margin: 0;
 }
 
-/* ---------------- PRESENTATION PHOTO + NOTE IN SHER-STYLE CARD ---------------- */
+/* ---------------- PRESENTATION / ACKNOWLEDGMENT ---------------- */
 
 .presentation-row {
-  grid-column: 1 / -1;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.presentation-combined-card {
-  width: 72%;
-  max-width: 850px;
-  padding: 1.35rem 1.5rem;
-  box-shadow: 10px 10px 0 var(--green);
-
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 1.5rem;
+  flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto 2rem;
 }
 
-.presentation-combined-card img {
+.presentation-row img {
   width: 100%;
+  max-width: 520px;
+  height: auto;
   display: block;
+  object-fit: contain;
   border-radius: 20px;
 }
 
 .presentation-note {
   font-family: "Inter", sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.45;
-  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--black);
   margin: 0;
+  max-width: 700px;
+  text-align: center;
 }
 
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width: 760px) {
+
   .poster-page {
     width: 100%;
     margin: 0;
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1.2rem 1.5rem;
     min-height: auto;
   }
 
-  .poster-grid {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
+  .poster-header {
+    margin-bottom: 3rem;
   }
 
-  .poster-header {
-    margin-bottom: 2.5rem;
+  .poster-header h1 {
+    font-size: 1.8rem;
   }
 
   .nav-buttons {
@@ -450,85 +440,82 @@ main.content {
     flex-wrap: wrap;
   }
 
-  .question {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.6rem;
-    text-align: center;
-    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
-    font-weight: 400;
+  .section-heading {
+    font-size: 1.65rem;
+    gap: 0.65rem;
+    margin-bottom: 1.3rem;
   }
 
-  .map-panel,
-  .scatter-panel,
-  .methodology-card,
-  .key-findings-row,
-  .key-findings-section,
-  .presentation-row,
-  .presentation-combined-card {
+  .section-heading img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .research-question {
+    grid-template-columns: 1fr;
+    gap: 1.7rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .question-text {
+    font-size: 1.12rem;
+  }
+
+  .map-panel img {
     width: 100%;
   }
 
-  .section-card,
-  .section-card.large {
-    min-height: auto;
+  .methodology-section {
+    margin-bottom: 4.5rem;
   }
 
-  .section-card {
-    padding: 3.5rem 1.35rem 1.6rem;
+  .methodology-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .image-panel {
-    padding: 1rem;
+  .methodology-text {
+    font-size: 0.92rem;
   }
 
-  .key-findings-heading {
-    font-size: clamp(1.5rem, 2.55vw, 2.25rem);
-    font-weight: 400;
-    gap: 0.75rem;
-    margin-bottom: 1.75rem;
+  .methodology-image img {
+    width: 100%;
   }
 
-  .key-findings-heading img {
-    width: 24px;
-    height: 24px;
+  .key-findings-section {
+    margin-bottom: 4.5rem;
   }
 
-  .key-finding-card {
-    grid-template-columns: 58px 1fr;
-    padding: 1rem;
-    gap: 0.9rem;
-    box-shadow: 6px 6px 0 var(--green);
-    margin-bottom: 1.2rem;
+  .findings-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
   }
 
   .key-finding-icon {
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1rem;
   }
 
   .key-finding-icon svg {
-    width: 29px;
-    height: 29px;
+    width: 38px;
+    height: 38px;
   }
 
   .key-finding-label {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 
   .key-finding-text p {
-    font-size: 0.8rem;
-  }
-
-  .presentation-combined-card {
-    grid-template-columns: 1fr;
-    padding: 1rem;
+    font-size: 0.88rem;
+    max-width: 420px;
   }
 
   .presentation-note {
     font-size: 0.88rem;
-    text-align: center;
   }
+
 }
 
 </style>
@@ -536,6 +523,7 @@ main.content {
 <div class="poster-page">
 
   <header class="poster-header">
+
     <h1>Examining the Influence of Socioeconomic Factors on Premature Death Rates Across Racial Groups</h1>
 
     <p>
@@ -557,52 +545,93 @@ main.content {
         <i class="bi bi-pencil"></i>
       </a>
     </nav>
+
   </header>
 
-  <main class="poster-grid">
 
-    <section class="intro-copy">
-      <div class="question">
-        How do social determinants of health shape premature death rates across racial groups in the United States?
-      </div>
+  <main class="poster-content">
 
-      <div class="section-card">
-        <div class="section-tag">Research Overview</div>
-        <p>
-          This project examines how socioeconomic factors influence premature death rates across U.S. counties and racial groups. Leveraging data from the County Health Rankings data set, the research quantifies the influence of systemic factors on premature mortality rates at the county level.
-        </p>
-      </div>
-    </section>
+    <!-- RESEARCH QUESTION -->
 
-    <section class="image-panel map-panel">
-      <img src="plot1.png" alt="Premature deaths by county in the United States">
-    </section>
+    <section class="research-question">
 
-    <section class="image-panel scatter-panel">
-      <img src="plot2.png" alt="Relationship between socioeconomic factors and premature deaths">
-    </section>
+      <div class="question-copy">
 
-    <section class="section-card large methodology-card">
-      <div class="section-tag">Methodology</div>
-      <p>
-        The analytical framework employed statistical modeling in R to evaluate relationships between mortality and various Social Determinants of Health. Based on exploratory data analysis, two distinct modeling approaches were compared:
-      </p>
-      <ul>
-        <li>Multiple Linear Regression: Utilized to establish baseline correlations and effect sizes.</li>
-        <li>Gradient Boosted Trees: Leveraged to capture non-linear relationships and high-dimensional interactions between variables.</li>
-      </ul>
-    </section>
+        <div class="question-block">
 
-    <section class="key-findings-row">
-      <div class="key-findings-section">
+          <h2 class="section-heading centered">
+            <img src="../../assets/logo.png" alt="">
+            <span>Research Question</span>
+            <img src="../../assets/logo.png" alt="">
+          </h2>
 
-        <div class="key-findings-heading">
-          <img src="../../assets/logo.png" alt="">
-          <span>Key Findings</span>
-          <img src="../../assets/logo.png" alt="">
+          <p class="question-text">
+            How do social determinants of health shape premature death rates across racial groups in the United States?
+          </p>
+
         </div>
 
-        <div class="key-finding-card">
+      </div>
+
+      <div class="map-panel">
+        <img src="plot1.png" alt="Premature deaths by county in the United States">
+      </div>
+
+    </section>
+
+
+    <!-- METHODOLOGY -->
+
+    <section class="methodology-section">
+
+      <h2 class="section-heading centered">
+        <img src="../../assets/logo.png" alt="">
+        <span>Methodology</span>
+        <img src="../../assets/logo.png" alt="">
+      </h2>
+
+      <div class="methodology-content">
+
+        <div class="methodology-text">
+
+          <p>
+           The study utilized data from the County Health Rankings data set. Statistical modelings methods were implemented using R   evaluate relationships between mortality and various Social Determinants of Health (SDOH). Based on exploratory data analysis, two distinct modeling approaches were chosen to be compared:
+          </p>
+
+          <ul>
+Observe direct linear relationships between SDOH variables and the outcome.</li>
+            <li><strong>Gradient Boosted Trees:</strong> Capture non-linear relationships between variables.</li>
+          </ul>
+
+          <p>
+
+        </div>
+
+        <div class="methodology-image">
+          <img src="plot2.png" alt="Relationship between socioeconomic factors and premature deaths">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KEY FINDINGS -->
+
+    <section class="key-findings-section">
+
+      <h2 class="section-heading centered">
+        <img src="../../assets/logo.png" alt="">
+        <span>Key Findings</span>
+        <img src="../../assets/logo.png" alt="">
+      </h2>
+
+      <div class="findings-grid">
+
+        <!-- FINDING 1 -->
+
+        <div class="finding">
+
           <div class="key-finding-icon">
             <svg viewBox="0 0 64 64" aria-hidden="true">
               <circle cx="24" cy="29" r="5.5"></circle>
@@ -616,14 +645,19 @@ main.content {
           </div>
 
           <div class="key-finding-text">
-            <div class="key-finding-label">Socioeconomic Impact</div>
+            <h3 class="key-finding-label">Socioeconomic Impact</h3>
             <p>
-              Higher income inequality and unemployment are linked to more years of premature death. Higher high school completion rates are linked to fewer premature deaths.
+              Higher income inequality and unemployment were linked to more years of premature death (earlier deaths). Higher high school completion rates are linked to fewer years of premature deaths.
             </p>
           </div>
+
         </div>
 
-        <div class="key-finding-card">
+
+        <!-- FINDING 2 -->
+
+        <div class="finding">
+
           <div class="key-finding-icon">
             <svg viewBox="0 0 64 64" aria-hidden="true">
               <path d="M12 52h40"></path>
@@ -635,14 +669,19 @@ main.content {
           </div>
 
           <div class="key-finding-text">
-            <div class="key-finding-label">Variable Importance</div>
+            <h3 class="key-finding-label">Variable Importance</h3>
             <p>
               Multiple linear regression identified AIAN population percentage as the most important variable, likely due to the model's sensitivity to this group's small population percentages across the U.S.
             </p>
           </div>
+
         </div>
 
-        <div class="key-finding-card">
+
+        <!-- FINDING 3 -->
+
+        <div class="finding">
+
           <div class="key-finding-icon">
             <svg viewBox="0 0 64 64" aria-hidden="true">
               <path d="M10 52h44"></path>
@@ -658,24 +697,29 @@ main.content {
           </div>
 
           <div class="key-finding-text">
-            <div class="key-finding-label">Model Comparison</div>
+            <h3 class="key-finding-label">Model Performance</h3>
             <p>
               Cross-validation showed the gradient boosted tree captured relationships in the data that multiple linear regression did not.
             </p>
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <section class="presentation-row">
-      <div class="presentation-combined-card">
-        <img src="plot5.png" alt="Research poster or presentation image">
 
-        <p class="presentation-note">
-          This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.
-        </p>
-      </div>
+    <!-- PRESENTATION / ACKNOWLEDGMENT -->
+
+    <section class="presentation-row">
+
+      <img src="plot5.png" alt="Research poster or presentation image">
+
+      <p class="presentation-note">
+        This research was conducted as part of the Carnegie Mellon Summer Undergraduate Research Experience (SURE) program in partnership with UnitedHealth Group.
+      </p>
+
     </section>
 
   </main>
